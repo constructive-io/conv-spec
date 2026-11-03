@@ -1,0 +1,30 @@
+packages:
+  - 'packages/*'
+
+# Managed by pnpm-policy — run `pnpm-policy generate` after editing pnpm-policy.yaml.
+
+# A third-party release must be 2d old before it can be installed.
+# Most malicious releases are found and yanked well inside that window.
+minimumReleaseAge: 2880
+
+# Exempt from the wait: 6 scope glob(s), 4 first-party package(s).
+# First-party membership comes from what pyramation publishes on npm — waiting on your own release protects nothing.
+minimumReleaseAgeExclude:
+  - "@constructive-db/*"
+  - "@constructive-io/*"
+  - "@launchql/*"
+  - "@pgpm/*"
+  - "@pgpmjs/*"
+  - "@pgsql/*"
+  - makage
+  - nested-obj
+  - pnpm-policy
+  - yamlize
+
+# The only dependencies permitted to run install scripts.
+allowBuilds:
+  nx: true # Nx CLI native postinstall step (downloads/links its native project-graph daemon binary).
+  unrs-resolver: true # unrs-resolver ships a native (Rust/N-API) module resolver binary that must be built/linked on install.
+
+# Transitive dependencies must come from the registry, not from git or a URL.
+blockExoticSubdeps: true

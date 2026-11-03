@@ -1,0 +1,22 @@
+[
+  {
+    "line": 6,
+    "text": "dan: hi",
+    "message": "speaker names are UPPERCASE: `DAN: hi…`"
+  },
+  {
+    "line": 7,
+    "text": "MARY-JANE: hi",
+    "message": "speaker names use letters, digits and _ — not -: `MARY_JANE: …`"
+  },
+  {
+    "line": 8,
+    "text": "[glass vol:0.5]",
+    "message": "unknown track `glass` — sound names are UPPERCASE: `[GLASS vol:0.5]`\nBuilt-in tracks: dialogue, foreground, ambience, music, transition, video. Declare others under @tracks, e.g. `glass: { level: -24 }`"
+  },
+  {
+    "line": 9,
+    "text": "[crowd LOUD]",
+    "message": "unknown track `crowd`\nBuilt-in tracks: dialogue, foreground, ambience, music, transition, video. Declare others under @tracks, e.g. `crowd: { level: -24 }`"
+  }
+]

@@ -1,0 +1,10 @@
+@include studio
+@characters
+HOST: { persona: host, track: study }
+@sounds
+BED: { file: music/my-own-bed.mp3 }
+---
+[transition INTRO hold]
+[music BED fade-in:3]
+HOST: Same intro, a different bed.
+[RAIN at:2]

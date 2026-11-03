@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "version": "independent",
+  "npmClient": "pnpm",
+  "registry": "https://registry.npmjs.org",
+  "command": {
+    "create": {
+      "homepage": "https://github.com/constructive-io/conv-spec",
+      "license": "MIT",
+      "access": "public"
+    },
+    "version": {
+      "syncWorkspaceLock": true
+    },
+    "publish": {
+      "allowBranch": "main",
+      "message": "chore(release): publish",
+      "conventionalCommits": true
+    }
+  }
+}

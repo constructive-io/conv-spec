@@ -1,0 +1,15 @@
+# attic.conv
+@characters
+ALICE: { persona: alice }
+BOB:   { persona: bob, emotion: warm, reverb: room }
+
+@sounds
+CREAK: { prompt: "an old floorboard creaking", duration: 2 }
+RAIN:  { file: sounds/rain.wav, loop: true, track: ambience }
+---
+[RAIN]
+ALICE: Did you hear that?
+BOB[excited]: I did! <break 0.4> It came from the attic.
+[CREAK hold]
+ALICE[whisper, seed:207]: Then we go up {firm: together}.
+[pause 1.5]

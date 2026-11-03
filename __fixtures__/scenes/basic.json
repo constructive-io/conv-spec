@@ -1,0 +1,90 @@
+{
+  "characters": {
+    "ALICE": {
+      "persona": "alice"
+    },
+    "BOB": {
+      "voice": "Bob",
+      "emotion": "warm",
+      "persona": "bob"
+    }
+  },
+  "sounds": {},
+  "tracks": {},
+  "items": [
+    {
+      "type": "line",
+      "line": 6,
+      "speaker": "ALICE",
+      "text": "Did you hear that?",
+      "overrides": {},
+      "segments": [
+        {
+          "type": "text",
+          "text": "Did you hear that?",
+          "overrides": {}
+        }
+      ]
+    },
+    {
+      "type": "line",
+      "line": 7,
+      "speaker": "BOB",
+      "text": "I did! It came from the attic.",
+      "overrides": {
+        "emotion": "excited"
+      },
+      "segments": [
+        {
+          "type": "text",
+          "text": "I did! It came from the attic.",
+          "overrides": {}
+        }
+      ]
+    },
+    {
+      "type": "pause",
+      "line": 8,
+      "seconds": 1.2
+    },
+    {
+      "type": "line",
+      "line": 9,
+      "speaker": "ALICE",
+      "text": "Then we go up together.",
+      "overrides": {
+        "seed": 207,
+        "emotion": "whisper"
+      },
+      "segments": [
+        {
+          "type": "text",
+          "text": "Then we go up together.",
+          "overrides": {}
+        }
+      ]
+    }
+  ],
+  "problems": [],
+  "index": {
+    "character": {
+      "ALICE": {
+        "line": 3
+      },
+      "BOB": {
+        "line": 4
+      }
+    },
+    "sound": {},
+    "track": {},
+    "speaker": {
+      "ALICE": {
+        "line": 6
+      },
+      "BOB": {
+        "line": 7
+      }
+    },
+    "file": {}
+  }
+}

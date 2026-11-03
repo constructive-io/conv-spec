@@ -1,0 +1,42 @@
+[
+  {
+    "line": 4,
+    "text": "[slide Problem]",
+    "message": "`Problem` — a slide id is lowercase, like the deck's ids (`title`, `market-opportunity`)"
+  },
+  {
+    "line": 5,
+    "text": "[slide intro outro]",
+    "message": "`outro` — one slide per marker; put the next on its own line"
+  },
+  {
+    "line": 6,
+    "text": "[slide intro page:2]",
+    "message": "`page:` isn't a slide option — use `[slide ID]` or `[slide ID step:N]`"
+  },
+  {
+    "line": 7,
+    "text": "[speakers faces lowerthird]",
+    "message": "`lowerthird` isn't a speaker widget. Did you mean `lower-third`? — widgets: faces, lower-third, waveform, captions (`lower-third:always` to show it on every line), or `all` / `off`"
+  },
+  {
+    "line": 8,
+    "text": "[speakers all faces]",
+    "message": "`off` and `all` stand alone: `[speakers off]`, `[speakers all]`"
+  },
+  {
+    "line": 9,
+    "text": "[video GEN]",
+    "message": "`GEN` is generated (`prompt:`), but `[video …]` needs a video file: `GEN: { file: path/to/clip.mp4 }`"
+  },
+  {
+    "line": 10,
+    "text": "[video GEN at:3]",
+    "message": "a video takes the screen, so it can't overlap anything — drop `at:`"
+  },
+  {
+    "line": 10,
+    "text": "[video GEN at:3]",
+    "message": "`GEN` is generated (`prompt:`), but `[video …]` needs a video file: `GEN: { file: path/to/clip.mp4 }`"
+  }
+]

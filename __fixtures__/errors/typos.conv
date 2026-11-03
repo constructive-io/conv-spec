@@ -1,0 +1,13 @@
+@characters
+DAN: { persona: dan }
+
+@sounds
+BED:   { file: music/bed.mp3 }
+GLASS: { prompt: "glass", duration: 2 }
+---
+DAN: hi
+[music BED fade-ot:3]
+[GLASS vol:loud]
+[GLAS]
+DAN[reverb:haul]: hi
+DAN[happy, sad]: hi

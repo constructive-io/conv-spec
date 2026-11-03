@@ -1,0 +1,139 @@
+{
+  "characters": {
+    "ALICE": {
+      "persona": "alice"
+    },
+    "BOB": {
+      "persona": "bob",
+      "emotion": "warm",
+      "reverb": "room"
+    }
+  },
+  "sounds": {
+    "CREAK": {
+      "prompt": "an old floorboard creaking",
+      "duration": 2
+    },
+    "RAIN": {
+      "file": "sounds/rain.wav",
+      "loop": true,
+      "track": "ambience"
+    }
+  },
+  "tracks": {},
+  "items": [
+    {
+      "type": "cue",
+      "line": 10,
+      "sound": "RAIN",
+      "track": "ambience",
+      "overrides": {}
+    },
+    {
+      "type": "line",
+      "line": 11,
+      "speaker": "ALICE",
+      "text": "Did you hear that?",
+      "overrides": {},
+      "segments": [
+        {
+          "type": "text",
+          "text": "Did you hear that?",
+          "overrides": {}
+        }
+      ]
+    },
+    {
+      "type": "line",
+      "line": 12,
+      "speaker": "BOB",
+      "text": "I did! <break 0.4> It came from the attic.",
+      "overrides": {
+        "emotion": "excited"
+      },
+      "segments": [
+        {
+          "type": "text",
+          "text": "I did!",
+          "overrides": {}
+        },
+        {
+          "type": "break",
+          "seconds": 0.4
+        },
+        {
+          "type": "text",
+          "text": "It came from the attic.",
+          "overrides": {}
+        }
+      ]
+    },
+    {
+      "type": "cue",
+      "line": 13,
+      "sound": "CREAK",
+      "track": "foreground",
+      "overrides": {
+        "hold": true
+      }
+    },
+    {
+      "type": "line",
+      "line": 14,
+      "speaker": "ALICE",
+      "text": "Then we go up {firm: together}.",
+      "overrides": {
+        "seed": 207,
+        "emotion": "whisper"
+      },
+      "segments": [
+        {
+          "type": "text",
+          "text": "Then we go up",
+          "overrides": {}
+        },
+        {
+          "type": "text",
+          "text": "together.",
+          "overrides": {
+            "emotion": "firm"
+          }
+        }
+      ]
+    },
+    {
+      "type": "pause",
+      "line": 15,
+      "seconds": 1.5
+    }
+  ],
+  "problems": [],
+  "index": {
+    "character": {
+      "ALICE": {
+        "line": 3
+      },
+      "BOB": {
+        "line": 4
+      }
+    },
+    "sound": {
+      "CREAK": {
+        "line": 7
+      },
+      "RAIN": {
+        "line": 8
+      }
+    },
+    "track": {},
+    "speaker": {
+      "ALICE": {
+        "line": 11
+      },
+      "BOB": {
+        "line": 12
+      }
+    },
+    "file": {}
+  }
+}

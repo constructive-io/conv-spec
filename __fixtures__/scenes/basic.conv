@@ -1,0 +1,9 @@
+# The smallest useful script: a cast, a header split, and dialogue.
+@characters
+ALICE: { persona: alice }
+BOB:   { voice: Bob, emotion: warm }
+---
+ALICE: Did you hear that?
+BOB[excited]: I did! It came from the attic.
+[pause 1.2]
+ALICE[whisper, seed:207]: Then we go up together.

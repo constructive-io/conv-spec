@@ -1,0 +1,27 @@
+[
+  {
+    "line": 9,
+    "text": "[music BED fade-ot:3]",
+    "message": "unknown key `fade-ot` on a [music …] play. Did you mean `fade-out`?\nValid keys: at, duration, fade-in, fade-out, for, hold, level, loop, noloop, pan, seed, start, vol, xfade"
+  },
+  {
+    "line": 10,
+    "text": "[GLASS vol:loud]",
+    "message": "`vol:loud` — vol must be a number"
+  },
+  {
+    "line": 11,
+    "text": "[GLAS]",
+    "message": "sound `GLAS` isn't declared under @sounds. Did you mean `GLASS`?\nAdd it, e.g. `GLAS: { file: sounds/glas.wav }` or `GLAS: { prompt: \"…\", duration: 3 }`"
+  },
+  {
+    "line": 12,
+    "text": "DAN[reverb:haul]: hi",
+    "message": "`reverb:haul` — not one of: room, hall, cathedral, plate. Did you mean `hall`?"
+  },
+  {
+    "line": 13,
+    "text": "DAN[happy, sad]: hi",
+    "message": "`[happy, sad]` names 2 emotions (happy, sad) — a line has one. Pick one, e.g. `[happy]`"
+  }
+]

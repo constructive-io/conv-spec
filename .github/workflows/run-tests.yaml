@@ -1,0 +1,43 @@
+name: CI tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: policy check
+        run: pnpm run policy:check
+
+      - name: build
+        run: pnpm build
+
+      - name: lint
+        run: pnpm exec eslint .
+
+      - name: test
+        run: pnpm test

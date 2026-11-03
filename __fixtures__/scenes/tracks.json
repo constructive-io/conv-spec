@@ -1,0 +1,202 @@
+{
+  "characters": {
+    "HOST": {
+      "persona": "host",
+      "track": "study"
+    },
+    "GUEST": {
+      "persona": "guest"
+    }
+  },
+  "sounds": {
+    "INTRO": {
+      "file": "music/intro.mp3"
+    },
+    "BED": {
+      "file": "music/bed.mp3"
+    },
+    "GLASS": {
+      "prompt": "a wine glass shattering on tile",
+      "duration": 2
+    },
+    "CITY": {
+      "prompt": "busy city street, cars passing, distant horns",
+      "duration": 10,
+      "loop": true,
+      "track": "ambience"
+    }
+  },
+  "tracks": {
+    "study": {
+      "reverb": "hall",
+      "reverb_mix": 0.16
+    },
+    "remote": {
+      "compress": true,
+      "reverb": "room",
+      "gain": -2,
+      "duck": -6,
+      "duck_under": [
+        "speech"
+      ]
+    }
+  },
+  "items": [
+    {
+      "type": "track",
+      "line": 15,
+      "track": "transition",
+      "action": "play",
+      "sound": "INTRO",
+      "overrides": {
+        "hold": true
+      }
+    },
+    {
+      "type": "track",
+      "line": 16,
+      "track": "music",
+      "action": "play",
+      "sound": "BED",
+      "overrides": {
+        "at": {
+          "mode": "offset",
+          "seconds": -2
+        },
+        "fade_in": 3
+      }
+    },
+    {
+      "type": "cue",
+      "line": 17,
+      "sound": "CITY",
+      "track": "ambience",
+      "overrides": {}
+    },
+    {
+      "type": "line",
+      "line": 18,
+      "speaker": "HOST",
+      "text": "Welcome back to the show.",
+      "overrides": {},
+      "segments": [
+        {
+          "type": "text",
+          "text": "Welcome back to the show.",
+          "overrides": {}
+        }
+      ]
+    },
+    {
+      "type": "line",
+      "line": 19,
+      "speaker": "GUEST",
+      "text": "Thanks for having me.",
+      "overrides": {
+        "track": "remote"
+      },
+      "segments": [
+        {
+          "type": "text",
+          "text": "Thanks for having me.",
+          "overrides": {}
+        }
+      ]
+    },
+    {
+      "type": "cue",
+      "line": 20,
+      "sound": "GLASS",
+      "track": "foreground",
+      "overrides": {
+        "at": {
+          "mode": "offset",
+          "seconds": 0.5
+        },
+        "pan": -0.4
+      }
+    },
+    {
+      "type": "track",
+      "line": 21,
+      "track": "music",
+      "action": "set",
+      "sound": null,
+      "overrides": {
+        "volume": 0.5,
+        "ramp": 2
+      }
+    },
+    {
+      "type": "track",
+      "line": 22,
+      "track": "music",
+      "action": "play",
+      "sound": "BED",
+      "overrides": {
+        "start": 15,
+        "for": 20
+      }
+    },
+    {
+      "type": "track",
+      "line": 23,
+      "track": "music",
+      "action": "off",
+      "sound": null,
+      "overrides": {
+        "fade_out": 4
+      }
+    },
+    {
+      "type": "track",
+      "line": 24,
+      "track": "ambience",
+      "action": "off",
+      "sound": "CITY",
+      "overrides": {}
+    }
+  ],
+  "problems": [],
+  "index": {
+    "character": {
+      "HOST": {
+        "line": 2
+      },
+      "GUEST": {
+        "line": 3
+      }
+    },
+    "sound": {
+      "INTRO": {
+        "line": 6
+      },
+      "BED": {
+        "line": 7
+      },
+      "GLASS": {
+        "line": 8
+      },
+      "CITY": {
+        "line": 9
+      }
+    },
+    "track": {
+      "study": {
+        "line": 12
+      },
+      "remote": {
+        "line": 13
+      }
+    },
+    "speaker": {
+      "HOST": {
+        "line": 18
+      },
+      "GUEST": {
+        "line": 19
+      }
+    },
+    "file": {}
+  }
+}

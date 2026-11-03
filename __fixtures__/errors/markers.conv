@@ -1,0 +1,10 @@
+@sounds
+GEN: { prompt: "a whoosh", duration: 1 }
+---
+[slide Problem]
+[slide intro outro]
+[slide intro page:2]
+[speakers faces lowerthird]
+[speakers all faces]
+[video GEN]
+[video GEN at:3]
