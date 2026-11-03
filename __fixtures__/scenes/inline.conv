@@ -1,0 +1,10 @@
+@characters
+ALICE: { persona: alice }
+---
+ALICE: I was calm about it <break 0.5> and then it hit me.
+ALICE: I hear you, {excited: but this changes everything!}
+ALICE: {whisper: come here} <0.3> {firm, reverb:hall: we need to talk}.
+ALICE: The door <sfx DOOR vol:0.8> swung open.
+
+@sounds
+DOOR: { prompt: "an old wooden door creaking open", duration: 2 }

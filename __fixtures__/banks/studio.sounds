@@ -1,0 +1,11 @@
+# studio.sounds — a shared bank: sounds and tracks many scripts use.
+# Scripts pull it in with `@include studio`; anything a script declares wins.
+
+@sounds
+INTRO: { file: music/intro.mp3 }
+BED:   { file: music/bed.mp3 }
+RAIN:  { prompt: "steady rain on a window, distant thunder", duration: 8, loop: true }
+
+@tracks
+remote: { compress: yes, reverb: room, gain: -2 }
+study:  { reverb: hall, reverb-mix: 0.16 }

@@ -1,0 +1,112 @@
+{
+  "characters": {
+    "HOST": {
+      "persona": "host",
+      "name": "Rae Kim",
+      "title": "Founder, Example Co"
+    }
+  },
+  "sounds": {
+    "COVER": {
+      "file": "video/cover.mp4"
+    }
+  },
+  "tracks": {},
+  "items": [
+    {
+      "type": "mark",
+      "line": 7,
+      "kind": "speakers",
+      "data": {
+        "show": [
+          "faces",
+          "lower-third",
+          "waveform"
+        ]
+      }
+    },
+    {
+      "type": "mark",
+      "line": 8,
+      "kind": "slide",
+      "data": {
+        "id": "title",
+        "step": 0
+      }
+    },
+    {
+      "type": "line",
+      "line": 9,
+      "speaker": "HOST",
+      "text": "Next slide.",
+      "overrides": {},
+      "segments": [
+        {
+          "type": "text",
+          "text": "Next slide.",
+          "overrides": {}
+        }
+      ]
+    },
+    {
+      "type": "mark",
+      "line": 10,
+      "kind": "slide",
+      "data": {
+        "id": "problem",
+        "step": 1
+      }
+    },
+    {
+      "type": "track",
+      "line": 11,
+      "track": "video",
+      "action": "play",
+      "sound": "COVER",
+      "overrides": {
+        "start": 2,
+        "for": 4,
+        "hold": true
+      }
+    },
+    {
+      "type": "mark",
+      "line": 12,
+      "kind": "speakers",
+      "data": {
+        "show": [
+          "captions",
+          "lower-third:always"
+        ]
+      }
+    },
+    {
+      "type": "mark",
+      "line": 13,
+      "kind": "speakers",
+      "data": {
+        "show": []
+      }
+    }
+  ],
+  "problems": [],
+  "index": {
+    "character": {
+      "HOST": {
+        "line": 2
+      }
+    },
+    "sound": {
+      "COVER": {
+        "line": 5
+      }
+    },
+    "track": {},
+    "speaker": {
+      "HOST": {
+        "line": 9
+      }
+    },
+    "file": {}
+  }
+}

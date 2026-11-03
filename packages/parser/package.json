@@ -1,0 +1,36 @@
+{
+  "name": "@constructive-io/conv-parser",
+  "version": "0.1.0",
+  "author": "Constructive <developers@constructive.io>",
+  "description": "Parser for .conv, a plain-text screenplay format for multi-voice audio: cast, dialogue, sound cues and tracks",
+  "main": "index.js",
+  "module": "esm/index.js",
+  "types": "index.d.ts",
+  "homepage": "https://github.com/constructive-io/conv-spec",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/constructive-io/conv-spec"
+  },
+  "bugs": {
+    "url": "https://github.com/constructive-io/conv-spec/issues"
+  },
+  "scripts": {
+    "copy": "makage assets",
+    "clean": "makage clean dist",
+    "prepublishOnly": "npm run build",
+    "build": "npm run clean && tsc && tsc -p tsconfig.esm.json && npm run copy",
+    "build:dev": "npm run clean && tsc --declarationMap && tsc -p tsconfig.esm.json && npm run copy",
+    "lint": "eslint . --fix",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "devDependencies": {
+    "makage": "^0.5.1"
+  },
+  "keywords": ["conv", "screenplay", "parser", "audio", "dialogue", "tts"]
+}

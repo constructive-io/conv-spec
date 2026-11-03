@@ -1,0 +1,117 @@
+{
+  "characters": {
+    "HOST": {
+      "persona": "host",
+      "track": "study"
+    }
+  },
+  "sounds": {
+    "INTRO": {
+      "file": "music/intro.mp3"
+    },
+    "BED": {
+      "file": "music/my-own-bed.mp3"
+    },
+    "RAIN": {
+      "prompt": "steady rain on a window, distant thunder",
+      "duration": 8,
+      "loop": true
+    }
+  },
+  "tracks": {
+    "remote": {
+      "compress": true,
+      "reverb": "room",
+      "gain": -2
+    },
+    "study": {
+      "reverb": "hall",
+      "reverb_mix": 0.16
+    }
+  },
+  "items": [
+    {
+      "type": "track",
+      "line": 7,
+      "track": "transition",
+      "action": "play",
+      "sound": "INTRO",
+      "overrides": {
+        "hold": true
+      }
+    },
+    {
+      "type": "track",
+      "line": 8,
+      "track": "music",
+      "action": "play",
+      "sound": "BED",
+      "overrides": {
+        "fade_in": 3
+      }
+    },
+    {
+      "type": "line",
+      "line": 9,
+      "speaker": "HOST",
+      "text": "Same intro, a different bed.",
+      "overrides": {},
+      "segments": [
+        {
+          "type": "text",
+          "text": "Same intro, a different bed.",
+          "overrides": {}
+        }
+      ]
+    },
+    {
+      "type": "cue",
+      "line": 10,
+      "sound": "RAIN",
+      "track": "foreground",
+      "overrides": {
+        "at": {
+          "mode": "absolute",
+          "seconds": 2
+        }
+      }
+    }
+  ],
+  "problems": [],
+  "index": {
+    "character": {
+      "HOST": {
+        "line": 3
+      }
+    },
+    "sound": {
+      "INTRO": {
+        "line": 1,
+        "include": "studio"
+      },
+      "BED": {
+        "line": 5
+      },
+      "RAIN": {
+        "line": 1,
+        "include": "studio"
+      }
+    },
+    "track": {
+      "remote": {
+        "line": 1,
+        "include": "studio"
+      },
+      "study": {
+        "line": 1,
+        "include": "studio"
+      }
+    },
+    "speaker": {
+      "HOST": {
+        "line": 9
+      }
+    },
+    "file": {}
+  }
+}

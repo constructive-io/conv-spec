@@ -1,0 +1,17 @@
+[
+  {
+    "line": 2,
+    "text": "HOST: ryan",
+    "message": "character definitions need braces: `HOST: { persona: ryan }` (`HOST: ryan` is the old v1 form)"
+  },
+  {
+    "line": 4,
+    "text": "HOST: hello",
+    "message": "character definitions need braces: `HOST: { persona: hello }` (`HOST: hello` is the old v1 form)"
+  },
+  {
+    "line": 5,
+    "text": "pause 0.5",
+    "message": "pauses go in brackets: `[pause 0.5]` (this is the old v1 form)"
+  }
+]

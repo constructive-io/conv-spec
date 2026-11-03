@@ -1,0 +1,134 @@
+{
+  "characters": {
+    "ALICE": {
+      "persona": "alice"
+    }
+  },
+  "sounds": {
+    "DOOR": {
+      "prompt": "an old wooden door creaking open",
+      "duration": 2
+    }
+  },
+  "tracks": {},
+  "items": [
+    {
+      "type": "line",
+      "line": 4,
+      "speaker": "ALICE",
+      "text": "I was calm about it <break 0.5> and then it hit me.",
+      "overrides": {},
+      "segments": [
+        {
+          "type": "text",
+          "text": "I was calm about it",
+          "overrides": {}
+        },
+        {
+          "type": "break",
+          "seconds": 0.5
+        },
+        {
+          "type": "text",
+          "text": "and then it hit me.",
+          "overrides": {}
+        }
+      ]
+    },
+    {
+      "type": "line",
+      "line": 5,
+      "speaker": "ALICE",
+      "text": "I hear you, {excited: but this changes everything!}",
+      "overrides": {},
+      "segments": [
+        {
+          "type": "text",
+          "text": "I hear you,",
+          "overrides": {}
+        },
+        {
+          "type": "text",
+          "text": "but this changes everything!",
+          "overrides": {
+            "emotion": "excited"
+          }
+        }
+      ]
+    },
+    {
+      "type": "line",
+      "line": 6,
+      "speaker": "ALICE",
+      "text": "{whisper: come here} <0.3> {firm, reverb:hall: we need to talk}.",
+      "overrides": {},
+      "segments": [
+        {
+          "type": "text",
+          "text": "come here",
+          "overrides": {
+            "emotion": "whisper"
+          }
+        },
+        {
+          "type": "break",
+          "seconds": 0.3
+        },
+        {
+          "type": "text",
+          "text": "we need to talk.",
+          "overrides": {
+            "reverb": "hall",
+            "emotion": "firm"
+          }
+        }
+      ]
+    },
+    {
+      "type": "line",
+      "line": 7,
+      "speaker": "ALICE",
+      "text": "The door <sfx DOOR vol:0.8> swung open.",
+      "overrides": {},
+      "segments": [
+        {
+          "type": "text",
+          "text": "The door",
+          "overrides": {}
+        },
+        {
+          "type": "sfx",
+          "sound": "DOOR",
+          "overrides": {
+            "volume": 0.8
+          }
+        },
+        {
+          "type": "text",
+          "text": "swung open.",
+          "overrides": {}
+        }
+      ]
+    }
+  ],
+  "problems": [],
+  "index": {
+    "character": {
+      "ALICE": {
+        "line": 2
+      }
+    },
+    "sound": {
+      "DOOR": {
+        "line": 10
+      }
+    },
+    "track": {},
+    "speaker": {
+      "ALICE": {
+        "line": 4
+      }
+    },
+    "file": {}
+  }
+}

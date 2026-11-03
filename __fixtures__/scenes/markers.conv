@@ -1,0 +1,13 @@
+@characters
+HOST: { persona: host, name: "Rae Kim", title: "Founder, Example Co" }
+
+@sounds
+COVER: { file: video/cover.mp4 }
+---
+[speakers faces lower-third waveform]
+[slide title]
+HOST: Next slide.
+[slide problem step:1]
+[video COVER start:2, for:4]
+[speakers lower-third:always captions]
+[speakers off]

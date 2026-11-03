@@ -1,0 +1,24 @@
+@characters
+HOST:  { persona: host, track: study }
+GUEST: { persona: guest }
+
+@sounds
+INTRO: { file: music/intro.mp3 }
+BED:   { file: music/bed.mp3 }
+GLASS: { prompt: "a wine glass shattering on tile", duration: 2 }
+CITY:  { prompt: "busy city street, cars passing, distant horns", duration: 10, loop: true, track: ambience }
+
+@tracks
+study:  { reverb: hall, reverb-mix: 0.16 }
+remote: { compress: yes, reverb: room, gain: -2, duck: -6, duck-under: speech }
+---
+[transition INTRO hold]
+[music BED at:-2, fade-in:3]
+[CITY]
+HOST: Welcome back to the show.
+GUEST[track:remote]: Thanks for having me.
+[GLASS at:+0.5, pan:-0.4]
+[music vol:0.5 ramp:2]
+[music BED start:0:15, for:20]
+[music off fade-out:4]
+[ambience off CITY]

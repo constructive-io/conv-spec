@@ -1,0 +1,56 @@
+{
+  "characters": {
+    "NARRATOR": {
+      "persona": "narrator"
+    }
+  },
+  "sounds": {},
+  "tracks": {},
+  "items": [
+    {
+      "type": "track",
+      "line": 4,
+      "track": "music",
+      "action": "play",
+      "sound": null,
+      "file": "music/meditative.mp3",
+      "overrides": {
+        "volume": 0.15
+      }
+    },
+    {
+      "type": "line",
+      "line": 5,
+      "speaker": "NARRATOR",
+      "text": "And so the light shines through.",
+      "overrides": {},
+      "segments": [
+        {
+          "type": "text",
+          "text": "And so the light shines through.",
+          "overrides": {}
+        }
+      ]
+    }
+  ],
+  "problems": [],
+  "index": {
+    "character": {
+      "NARRATOR": {
+        "line": 2
+      }
+    },
+    "sound": {},
+    "track": {},
+    "speaker": {
+      "NARRATOR": {
+        "line": 5
+      }
+    },
+    "file": {
+      "music/meditative.mp3": {
+        "line": 4
+      }
+    }
+  }
+}

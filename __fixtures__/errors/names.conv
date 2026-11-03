@@ -1,0 +1,9 @@
+@characters
+DAN: { persona: dan }
+@sounds
+GLASS: { prompt: "glass breaking", duration: 2 }
+---
+dan: hi
+MARY-JANE: hi
+[glass vol:0.5]
+[crowd LOUD]
