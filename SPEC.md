@@ -291,7 +291,8 @@ The id is lowercase. Mark: `{ "id": "problem", "step": 1 }`.
 `[speakers faces lower-third waveform captions]`, `[speakers all]`,
 `[speakers off]` — which widgets a player shows for whoever is speaking.
 `lower-third` introduces a person on their first line; `lower-third:always`
-shows it on every line. Characters gain `name:` and `title:` for it.
+shows it on every line. `faces` moves the mouth with the voice; `faces:still`
+shows the face without it. Characters gain `name:` and `title:` for it.
 Mark: `{ "show": ["faces", "lower-third"] }`.
 
 ### 11.3 Video
