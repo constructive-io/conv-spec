@@ -10,4 +10,5 @@ HOST: Next slide.
 [slide problem step:1]
 [video COVER start:2, for:4]
 [speakers lower-third:always captions]
+[speakers faces:still waveform]
 [speakers off]

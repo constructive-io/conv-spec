@@ -85,6 +85,17 @@
       "line": 13,
       "kind": "speakers",
       "data": {
+        "show": [
+          "waveform",
+          "faces:still"
+        ]
+      }
+    },
+    {
+      "type": "mark",
+      "line": 14,
+      "kind": "speakers",
+      "data": {
         "show": []
       }
     }
