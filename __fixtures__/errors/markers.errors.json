@@ -17,7 +17,7 @@
   {
     "line": 7,
     "text": "[speakers faces lowerthird]",
-    "message": "`lowerthird` isn't a speaker widget. Did you mean `lower-third`? — widgets: faces, lower-third, waveform, captions (`lower-third:always` to show it on every line, `faces:still` for a face that doesn't move its mouth), or `all` / `off`"
+    "message": "`lowerthird` isn't a speaker widget. Did you mean `lower-third`? — widgets: faces, lower-third, waveform, captions (`lower-third:always` to show it on every line, `faces:talking` for a face that moves its mouth with the voice), or `all` / `off`"
   },
   {
     "line": 8,
