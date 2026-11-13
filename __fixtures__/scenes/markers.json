@@ -86,8 +86,8 @@
       "kind": "speakers",
       "data": {
         "show": [
-          "waveform",
-          "faces:still"
+          "faces",
+          "waveform"
         ]
       }
     },
