@@ -5,11 +5,11 @@
 </p>
 
 <p align="center" width="100%">
-  <a href="https://github.com/constructive-io/conversation-spec/actions/workflows/run-tests.yaml">
-    <img height="20" src="https://github.com/constructive-io/conversation-spec/actions/workflows/run-tests.yaml/badge.svg" />
+  <a href="https://github.com/constructive-io/conversation-format/actions/workflows/run-tests.yaml">
+    <img height="20" src="https://github.com/constructive-io/conversation-format/actions/workflows/run-tests.yaml/badge.svg" />
   </a>
-  <a href="https://github.com/constructive-io/conversation-spec/blob/main/LICENSE"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
-  <a href="https://www.npmjs.com/package/@conversation/spec"><img height="20" src="https://img.shields.io/github/package-json/v/constructive-io/conversation-spec?filename=packages%2Fparser%2Fpackage.json"/></a>
+  <a href="https://github.com/constructive-io/conversation-format/blob/main/LICENSE"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
+  <a href="https://www.npmjs.com/package/@conversation/spec"><img height="20" src="https://img.shields.io/github/package-json/v/constructive-io/conversation-format?filename=packages%2Fparser%2Fpackage.json"/></a>
 </p>
 
 The reference parser for [`.conv`](../../SPEC.md): text in, a JSON-shaped scene

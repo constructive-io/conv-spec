@@ -1,14 +1,14 @@
-# conversation-spec
+# Conversation Format
 
 <p align="center" width="100%">
   <img height="250" src="https://raw.githubusercontent.com/constructive-io/constructive/refs/heads/main/assets/outline-logo.svg" />
 </p>
 
 <p align="center" width="100%">
-  <a href="https://github.com/constructive-io/conversation-spec/actions/workflows/run-tests.yaml">
-    <img height="20" src="https://github.com/constructive-io/conversation-spec/actions/workflows/run-tests.yaml/badge.svg" />
+  <a href="https://github.com/constructive-io/conversation-format/actions/workflows/run-tests.yaml">
+    <img height="20" src="https://github.com/constructive-io/conversation-format/actions/workflows/run-tests.yaml/badge.svg" />
   </a>
-  <a href="https://github.com/constructive-io/conversation-spec/blob/main/LICENSE"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
+  <a href="https://github.com/constructive-io/conversation-format/blob/main/LICENSE"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
 </p>
 
 `.conv` is a plain-text screenplay format for multi-voice audio: a cast, a list
@@ -92,7 +92,7 @@ and how to check the result. Agents that read `.agents/skills/` pick it up in th
 repository. To have it anywhere else:
 
 ```sh
-npx skills add https://github.com/constructive-io/conversation-spec --skill conv
+npx skills add https://github.com/constructive-io/conversation-format --skill conv
 ```
 
 Rendering a script is the `constructive-media` skill, in

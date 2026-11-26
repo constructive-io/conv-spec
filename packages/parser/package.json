@@ -6,7 +6,7 @@
   "main": "index.js",
   "module": "esm/index.js",
   "types": "index.d.ts",
-  "homepage": "https://github.com/constructive-io/conversation-spec",
+  "homepage": "https://github.com/constructive-io/conversation-format",
   "license": "MIT",
   "publishConfig": {
     "access": "public",
@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/constructive-io/conversation-spec"
+    "url": "https://github.com/constructive-io/conversation-format"
   },
   "bugs": {
-    "url": "https://github.com/constructive-io/conversation-spec/issues"
+    "url": "https://github.com/constructive-io/conversation-format/issues"
   },
   "scripts": {
     "copy": "makage assets",

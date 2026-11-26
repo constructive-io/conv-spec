@@ -4,7 +4,7 @@ description: The `.conv` format — a plain-text screenplay for multi-voice audi
 compatibility: Node.js 20+ for the reference parser and the `conv` command
 metadata:
   author: constructive-io
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # The `.conv` format
@@ -22,6 +22,22 @@ that is right the first time, and how to check it.
 - Writing a script: a conversation, a scene, a narrated deck, a podcast segment.
 - Checking a script, or mending the problems a check reports.
 - Reading a script in a program: the parser, its JSON, its plugins.
+- Explaining what checks a script and what turns it into sound.
+
+## How the pieces fit
+
+| Piece | Where | What it does |
+| --- | --- | --- |
+| The format | [SPEC.md](../../../SPEC.md) | says what a script may hold |
+| `@conversation/spec` | npm, and [`packages/parser`](../../../packages/parser) | reads a script: text in, a scene as JSON out |
+| `@conversation/cli` | npm, and [`packages/cli`](../../../packages/cli) | the `conv` command: `conv check` and `conv parse` |
+| A renderer | such as [Constructive Media](https://github.com/constructive-io/constructive-media) | turns a script into sound |
+
+Nothing in this repository makes a sound, and nothing in it calls a renderer.
+A renderer reads the script itself, and gives the same answers as this parser
+because both are held to the files in [`__fixtures__/`](../../../__fixtures__).
+So the work goes: write the script, run `conv check` until it says `ok`, then
+give the same file to a renderer.
 
 ## A script
 
@@ -145,29 +161,47 @@ of a name wins over the bank's.
 
 ## Check it
 
-From a clone of this repository:
+```sh
+npx @conversation/cli check scripts/*.conv              # every problem in every file; exit 1 if any
+npx @conversation/cli parse scripts/attic.conv          # the scene as JSON
+npx @conversation/cli parse scripts/attic.conv --compact
+```
+
+This needs only Node.js. `npm install -g @conversation/cli` puts the command on
+the path, and then it is `conv check scripts/*.conv`. `--banks <dir>` says
+where `@include NAME` finds `NAME.sounds`; without it, `banks/` beside the
+script and then in the current folder.
+
+Working on the format itself, in a clone of this repository, run the parser as
+it stands in the tree:
 
 ```sh
 pnpm install && pnpm build
-node packages/cli/dist/cli.js check scripts/*.conv     # every problem in every file; exit 1 if any
-node packages/cli/dist/cli.js parse scripts/attic.conv # the scene as JSON
+node packages/cli/dist/cli.js check __fixtures__/errors/typos.conv
 ```
-
-Installed from npm the command is `conv`: `npx @conversation/cli check scripts/*.conv`.
-`--banks <dir>` says where `@include NAME` finds `NAME.sounds`; without it,
-`banks/` beside the script and then in the current folder.
 
 Every problem is reported at once, each with its line, what is wrong and how
-to mend it:
+to mend it. That last command prints:
 
-```
-attic.conv: 2 problems
+```text
+__fixtures__/errors/typos.conv: 5 problems
 
   line 9: [music BED fade-ot:3]
     unknown key `fade-ot` on a [music …] play. Did you mean `fade-out`?
+      Valid keys: at, duration, fade-in, fade-out, for, hold, level, loop, noloop, pan, seed, start, vol, xfade
+
+  line 10: [GLASS vol:loud]
+    `vol:loud` — vol must be a number
 
   line 11: [GLAS]
     sound `GLAS` isn't declared under @sounds. Did you mean `GLASS`?
+      Add it, e.g. `GLAS: { file: sounds/glas.wav }` or `GLAS: { prompt: "…", duration: 3 }`
+
+  line 12: DAN[reverb:haul]: hi
+    `reverb:haul` — not one of: room, hall, cathedral, plate. Did you mean `hall`?
+
+  line 13: DAN[happy, sad]: hi
+    `[happy, sad]` names 2 emotions (happy, sad) — a line has one. Pick one, e.g. `[happy]`
 ```
 
 Mend every one and check again. A script is not finished until the check
@@ -187,9 +221,22 @@ me voice alice a-voice-your-speech-server-knows --new
 me say scene.conv out/scene.flac --stems   # the scene as sound
 ```
 
-Setting it up is the `constructive-media` skill in that repository. Two things
+`me` is that engine's command, not this repository's: `conv` never makes a
+sound. Setting it up is the `constructive-media` skill in that repository. Two things
 it asks of a script today: every persona needs a voice, and a sound needs a
 `file:`, since it does not yet make a sound from a `prompt:`.
+
+## Before you call a script done
+
+- **Run the check.** `conv check` says `ok` and exits 0. Do not judge a script
+  by eye.
+- **Know what the check cannot see.** It reads text. It does not open a sound's
+  `file:`, and it does not know whether a persona has a voice. Both are found
+  when the script is rendered, so say so if you have not rendered it.
+- **Keep the script portable.** No model names, no voices' files, no paths that
+  exist on one machine only.
+- **Asked for sound, not a script?** Render it as above, and report what the
+  renderer said, with every line it marked for a listen.
 
 ## Read it in a program
 

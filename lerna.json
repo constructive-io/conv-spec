@@ -5,7 +5,7 @@
   "registry": "https://registry.npmjs.org",
   "command": {
     "create": {
-      "homepage": "https://github.com/constructive-io/conversation-spec",
+      "homepage": "https://github.com/constructive-io/conversation-format",
       "license": "MIT",
       "access": "public"
     },
