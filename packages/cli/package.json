@@ -1,6 +1,6 @@
 {
   "name": "conv-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Constructive <developers@constructive.io>",
   "description": "Check .conv scripts and print their parsed scene as JSON",
   "main": "index.js",
@@ -38,5 +38,8 @@
   "devDependencies": {
     "makage": "^0.5.1"
   },
-  "keywords": ["conv", "cli"]
+  "keywords": [
+    "conv",
+    "cli"
+  ]
 }
