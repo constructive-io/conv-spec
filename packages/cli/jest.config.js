@@ -16,6 +16,6 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   modulePathIgnorePatterns: ['dist/*'],
   moduleNameMapper: {
-    '^conv-parser$': '<rootDir>/../parser/src',
+    '^@conversation/spec$': '<rootDir>/../parser/src',
   },
 };

@@ -5,4 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.1.1 (2026-11-26)
 
-**Note:** Version bump only for package conv-parser
+**Note:** Version bump only for package @conversation/spec

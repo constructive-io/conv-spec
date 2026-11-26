@@ -1,4 +1,4 @@
-import { parse } from 'conv-parser';
+import { parse } from '@conversation/spec';
 import { existsSync, readFileSync } from 'fs';
 import { dirname, join, resolve } from 'path';
 

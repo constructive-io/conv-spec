@@ -1,12 +1,12 @@
 {
-  "name": "conv-parser",
+  "name": "@conversation/spec",
   "version": "0.1.1",
   "author": "Constructive <developers@constructive.io>",
   "description": "Parser for .conv, a plain-text screenplay format for multi-voice audio: cast, dialogue, sound cues and tracks",
   "main": "index.js",
   "module": "esm/index.js",
   "types": "index.d.ts",
-  "homepage": "https://github.com/constructive-io/conv-spec",
+  "homepage": "https://github.com/constructive-io/conversation-spec",
   "license": "MIT",
   "publishConfig": {
     "access": "public",
@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/constructive-io/conv-spec"
+    "url": "https://github.com/constructive-io/conversation-spec"
   },
   "bugs": {
-    "url": "https://github.com/constructive-io/conv-spec/issues"
+    "url": "https://github.com/constructive-io/conversation-spec/issues"
   },
   "scripts": {
     "copy": "makage assets",

@@ -153,7 +153,7 @@ node packages/cli/dist/cli.js check scripts/*.conv     # every problem in every 
 node packages/cli/dist/cli.js parse scripts/attic.conv # the scene as JSON
 ```
 
-Installed from npm the command is `conv`: `npx conv-cli check scripts/*.conv`.
+Installed from npm the command is `conv`: `npx @conversation/cli check scripts/*.conv`.
 `--banks <dir>` says where `@include NAME` finds `NAME.sounds`; without it,
 `banks/` beside the script and then in the current folder.
 
@@ -194,7 +194,7 @@ it asks of a script today: every persona needs a voice, and a sound needs a
 ## Read it in a program
 
 ```ts
-import { parse } from 'conv-parser';
+import { parse } from '@conversation/spec';
 
 const scene = parse(text, { source: 'attic.conv' });   // throws ConvError listing every problem
 for (const item of scene.items) {

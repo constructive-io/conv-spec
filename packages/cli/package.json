@@ -1,12 +1,12 @@
 {
-  "name": "conv-cli",
+  "name": "@conversation/cli",
   "version": "0.1.1",
   "author": "Constructive <developers@constructive.io>",
   "description": "Check .conv scripts and print their parsed scene as JSON",
   "main": "index.js",
   "module": "esm/index.js",
   "types": "index.d.ts",
-  "homepage": "https://github.com/constructive-io/conv-spec",
+  "homepage": "https://github.com/constructive-io/conversation-spec",
   "license": "MIT",
   "publishConfig": {
     "access": "public",
@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/constructive-io/conv-spec"
+    "url": "https://github.com/constructive-io/conversation-spec"
   },
   "bugs": {
-    "url": "https://github.com/constructive-io/conv-spec/issues"
+    "url": "https://github.com/constructive-io/conversation-spec/issues"
   },
   "bin": {
     "conv": "cli.js"
@@ -33,7 +33,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "conv-parser": "workspace:^"
+    "@conversation/spec": "workspace:^"
   },
   "devDependencies": {
     "makage": "^0.5.1"
