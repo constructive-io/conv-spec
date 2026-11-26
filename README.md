@@ -73,6 +73,17 @@ attic.conv: 2 problems
     sound `GLAS` isn't declared under @sounds. Did you mean `GLASS`?
 ```
 
+## Implementations
+
+A parser tells you what a script says. A renderer makes it heard.
+
+| | |
+|---|---|
+| [`@constructive-io/conv-parser`](./packages/parser) | the reference parser, in TypeScript |
+| [Constructive Media](https://github.com/constructive-io/constructive-media) | a renderer: `me say scene.conv out/scene.flac` says every line through a speech model of your choosing, checks each one by listening back, and mixes the scene. Its own parser, in Python, is held to the fixtures here |
+
+Written another one? The [conformance fixtures](./__fixtures__) are how to know it agrees.
+
 ## Working with an AI agent
 
 The `conv` skill at `.agents/skills/conv/` is how to write a script that is right the
@@ -83,6 +94,9 @@ repository. To have it anywhere else:
 ```sh
 npx skills add https://github.com/constructive-io/conv-spec --skill conv
 ```
+
+Rendering a script is the `constructive-media` skill, in
+[Constructive Media](https://github.com/constructive-io/constructive-media)'s repository.
 
 ## Extending the format
 

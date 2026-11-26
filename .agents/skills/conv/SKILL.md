@@ -173,6 +173,24 @@ attic.conv: 2 problems
 Mend every one and check again. A script is not finished until the check
 says `ok`.
 
+## Hear it
+
+The format says nothing about how a script becomes sound; a renderer does that.
+[Constructive Media](https://github.com/constructive-io/constructive-media) is
+an implementation: it reads a script with a parser held to this repository's
+conformance files, says every line through a speech model you point it at,
+listens back to each one, and mixes the scene.
+
+```sh
+me conv scene.conv                         # the same check, in the renderer
+me voice alice a-voice-your-speech-server-knows --new
+me say scene.conv out/scene.flac --stems   # the scene as sound
+```
+
+Setting it up is the `constructive-media` skill in that repository. Two things
+it asks of a script today: every persona needs a voice, and a sound needs a
+`file:`, since it does not yet make a sound from a `prompt:`.
+
 ## Read it in a program
 
 ```ts
@@ -190,3 +208,10 @@ New keys, values, tracks and `[directives]` are added by a plugin, described in
 on-screen speakers and video are plugins the parser ships with. Another
 parser is held to the same answers by the files in
 [`__fixtures__/`](../../../__fixtures__).
+
+## Related skills
+
+| Skill | Where | For |
+| --- | --- | --- |
+| `constructive-media` | [constructive-media](https://github.com/constructive-io/constructive-media) | Rendering a script: voices, the speech server, `me say` |
+| `media-engine-plugins` | [media-engine-plugins](https://github.com/constructive-io/media-engine-plugins) | Adapters for that engine under copyleft licenses |
