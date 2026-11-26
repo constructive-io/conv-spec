@@ -10,6 +10,7 @@ The `.conv` format: its grammar, conformance fixtures, and the reference parser.
 | `__fixtures__/banks/*.sounds` | banks the fixtures include |
 | `packages/parser` | `@constructive-io/conv-parser` — pure TS, no dependencies, no fs |
 | `packages/cli` | `@constructive-io/conv-cli` — `conv check` / `conv parse`, file resolver |
+| `.agents/skills/conv/SKILL.md` | the skill: how to write a script and check it |
 
 ## Rules
 
@@ -22,6 +23,8 @@ The `.conv` format: its grammar, conformance fixtures, and the reference parser.
   it is truly core grammar. The defaults live in `packages/parser/src/plugins`.
 - Errors are the product: every problem names its line, says what is wrong and
   how to fix it, and all problems are reported at once. Never drop input silently.
+- The skill changes with the grammar: every script it shows must parse, and a test in
+  `packages/cli` holds it to that.
 - Fixtures are text only: no audio, video or image files. Paths inside them are
   placeholders.
 

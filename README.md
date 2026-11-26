@@ -41,6 +41,7 @@ ALICE[whisper, seed:207]: Then we go up {firm: together}.
 | [`__fixtures__/`](./__fixtures__) | conformance: scripts and exactly what they parse to, or the errors they report |
 | [`@constructive-io/conv-parser`](./packages/parser) | the reference parser: text in, a JSON scene out, with a plugin system |
 | [`@constructive-io/conv-cli`](./packages/cli) | `conv check` and `conv parse` |
+| [`.agents/skills/conv`](./.agents/skills/conv/SKILL.md) | a skill that teaches an AI agent to write scripts and check them |
 
 ## Quick start
 
@@ -70,6 +71,17 @@ attic.conv: 2 problems
 
   line 11: [GLAS]
     sound `GLAS` isn't declared under @sounds. Did you mean `GLASS`?
+```
+
+## Working with an AI agent
+
+The `conv` skill at `.agents/skills/conv/` is how to write a script that is right the
+first time: what to write for what you want to hear, the rules that catch people out,
+and how to check the result. Agents that read `.agents/skills/` pick it up in this
+repository. To have it anywhere else:
+
+```sh
+npx skills add https://github.com/constructive-io/conv-spec --skill conv
 ```
 
 ## Extending the format
