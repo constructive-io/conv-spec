@@ -39,19 +39,19 @@ ALICE[whisper, seed:207]: Then we go up {firm: together}.
 |---|---|
 | [`SPEC.md`](./SPEC.md) | the grammar |
 | [`__fixtures__/`](./__fixtures__) | conformance: scripts and exactly what they parse to, or the errors they report |
-| [`@constructive-io/conv-parser`](./packages/parser) | the reference parser: text in, a JSON scene out, with a plugin system |
-| [`@constructive-io/conv-cli`](./packages/cli) | `conv check` and `conv parse` |
+| [`conv-parser`](./packages/parser) | the reference parser: text in, a JSON scene out, with a plugin system |
+| [`conv-cli`](./packages/cli) | `conv check` and `conv parse` |
 | [`.agents/skills/conv`](./.agents/skills/conv/SKILL.md) | a skill that teaches an AI agent to write scripts and check them |
 
 ## Quick start
 
 ```sh
-npx @constructive-io/conv-cli check scripts/*.conv
-npx @constructive-io/conv-cli parse scripts/attic.conv > attic.json
+npx conv-cli check scripts/*.conv
+npx conv-cli parse scripts/attic.conv > attic.json
 ```
 
 ```ts
-import { parse } from '@constructive-io/conv-parser';
+import { parse } from 'conv-parser';
 
 const scene = parse(text, { source: 'attic.conv' });
 for (const item of scene.items) {
@@ -79,7 +79,7 @@ A parser tells you what a script says. A renderer makes it heard.
 
 | | |
 |---|---|
-| [`@constructive-io/conv-parser`](./packages/parser) | the reference parser, in TypeScript |
+| [`conv-parser`](./packages/parser) | the reference parser, in TypeScript |
 | [Constructive Media](https://github.com/constructive-io/constructive-media) | a renderer: `me say scene.conv out/scene.flac` says every line through a speech model of your choosing, checks each one by listening back, and mixes the scene. Its own parser, in Python, is held to the fixtures here |
 
 Written another one? The [conformance fixtures](./__fixtures__) are how to know it agrees.
@@ -110,7 +110,7 @@ are plugins, and you can add your own — keys, enum values, tracks and
 pnpm install
 pnpm build
 pnpm test
-UPDATE_FIXTURES=1 pnpm --filter @constructive-io/conv-parser test   # after a deliberate grammar change
+UPDATE_FIXTURES=1 pnpm --filter conv-parser test   # after a deliberate grammar change
 ```
 
 ## License

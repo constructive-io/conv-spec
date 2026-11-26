@@ -16,6 +16,6 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   modulePathIgnorePatterns: ['dist/*'],
   moduleNameMapper: {
-    '^@constructive-io/conv-parser$': '<rootDir>/../parser/src',
+    '^conv-parser$': '<rootDir>/../parser/src',
   },
 };

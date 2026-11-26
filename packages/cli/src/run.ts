@@ -1,4 +1,4 @@
-import { ConvError, formatProblems, parse, Scene } from '@constructive-io/conv-parser';
+import { ConvError, formatProblems, parse, Scene } from 'conv-parser';
 import { existsSync, readFileSync, realpathSync } from 'fs';
 import { dirname, join, resolve } from 'path';
 

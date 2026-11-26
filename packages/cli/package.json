@@ -1,5 +1,5 @@
 {
-  "name": "@constructive-io/conv-cli",
+  "name": "conv-cli",
   "version": "0.1.0",
   "author": "Constructive <developers@constructive.io>",
   "description": "Check .conv scripts and print their parsed scene as JSON",
@@ -33,7 +33,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@constructive-io/conv-parser": "workspace:^"
+    "conv-parser": "workspace:^"
   },
   "devDependencies": {
     "makage": "^0.5.1"

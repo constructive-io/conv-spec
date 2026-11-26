@@ -65,7 +65,7 @@ importers:
 
   packages/cli:
     dependencies:
-      '@constructive-io/conv-parser':
+      conv-parser:
         specifier: workspace:^
         version: link:../parser/dist
     devDependencies:
