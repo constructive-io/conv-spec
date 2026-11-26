@@ -1,11 +1,11 @@
 {
-  "name": "conversation-spec",
+  "name": "conversation-format",
   "version": "0.0.1",
   "author": "Constructive <developers@constructive.io>",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/constructive-io/conversation-spec"
+    "url": "https://github.com/constructive-io/conversation-format"
   },
   "license": "MIT",
   "publishConfig": {

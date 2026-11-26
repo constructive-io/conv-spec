@@ -1,4 +1,4 @@
-# AGENTS.md — conversation-spec
+# AGENTS.md — Conversation Format
 
 The `.conv` format: its grammar, conformance fixtures, and the reference parser.
 
@@ -27,8 +27,9 @@ is not finished until that parser agrees, so say so when you make one.
   it is truly core grammar. The defaults live in `packages/parser/src/plugins`.
 - Errors are the product: every problem names its line, says what is wrong and
   how to fix it, and all problems are reported at once. Never drop input silently.
-- The skill changes with the grammar: every script it shows must parse, and a test in
-  `packages/cli` holds it to that.
+- The skill changes with the grammar and with the command: every script it shows must
+  parse, every command, option and package it names must exist, and the output it shows
+  must be what the command prints. A test in `packages/cli` holds it to all of that.
 - Fixtures are text only: no audio, video or image files. Paths inside them are
   placeholders.
 
