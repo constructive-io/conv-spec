@@ -7,7 +7,7 @@ sound effects) — and nothing about how any of it is produced. Voices, sound
 generation, mixing and playback belong to whatever renders the file.
 
 This document is the grammar. The reference parser is
-[`conv-parser`](./packages/parser); the conformance fixtures in
+[`@conversation/spec`](./packages/parser); the conformance fixtures in
 [`__fixtures__/`](./__fixtures__) pin exactly what a parser must produce.
 
 ```

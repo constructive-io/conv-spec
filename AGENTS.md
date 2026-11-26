@@ -1,4 +1,4 @@
-# AGENTS.md — conv-spec
+# AGENTS.md — conversation-spec
 
 The `.conv` format: its grammar, conformance fixtures, and the reference parser.
 
@@ -8,8 +8,8 @@ The `.conv` format: its grammar, conformance fixtures, and the reference parser.
 | `__fixtures__/scenes/*.conv` + `.json` | must parse to exactly the JSON |
 | `__fixtures__/errors/*.conv` + `.errors.json` | must report exactly these problems |
 | `__fixtures__/banks/*.sounds` | banks the fixtures include |
-| `packages/parser` | `conv-parser` — pure TS, no dependencies, no fs |
-| `packages/cli` | `conv-cli` — `conv check` / `conv parse`, file resolver |
+| `packages/parser` | `@conversation/spec` — pure TS, no dependencies, no fs |
+| `packages/cli` | `@conversation/cli` — `conv check` / `conv parse`, file resolver |
 | `.agents/skills/conv/SKILL.md` | the skill: how to write a script and check it |
 
 [Constructive Media](https://github.com/constructive-io/constructive-media) implements the
@@ -19,7 +19,7 @@ is not finished until that parser agrees, so say so when you make one.
 ## Rules
 
 - A grammar change touches `SPEC.md`, a fixture, and the parser together.
-  Regenerate expectations with `UPDATE_FIXTURES=1 pnpm --filter conv-parser test`
+  Regenerate expectations with `UPDATE_FIXTURES=1 pnpm --filter @conversation/spec test`
   and read the diff before committing it.
 - The parser stays pure: no filesystem, network or runtime dependencies. I/O goes
   through adapters (`IncludeResolver`).

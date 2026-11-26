@@ -1,14 +1,14 @@
-# conv-spec
+# conversation-spec
 
 <p align="center" width="100%">
   <img height="250" src="https://raw.githubusercontent.com/constructive-io/constructive/refs/heads/main/assets/outline-logo.svg" />
 </p>
 
 <p align="center" width="100%">
-  <a href="https://github.com/constructive-io/conv-spec/actions/workflows/run-tests.yaml">
-    <img height="20" src="https://github.com/constructive-io/conv-spec/actions/workflows/run-tests.yaml/badge.svg" />
+  <a href="https://github.com/constructive-io/conversation-spec/actions/workflows/run-tests.yaml">
+    <img height="20" src="https://github.com/constructive-io/conversation-spec/actions/workflows/run-tests.yaml/badge.svg" />
   </a>
-  <a href="https://github.com/constructive-io/conv-spec/blob/main/LICENSE"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
+  <a href="https://github.com/constructive-io/conversation-spec/blob/main/LICENSE"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
 </p>
 
 `.conv` is a plain-text screenplay format for multi-voice audio: a cast, a list
@@ -39,19 +39,19 @@ ALICE[whisper, seed:207]: Then we go up {firm: together}.
 |---|---|
 | [`SPEC.md`](./SPEC.md) | the grammar |
 | [`__fixtures__/`](./__fixtures__) | conformance: scripts and exactly what they parse to, or the errors they report |
-| [`conv-parser`](./packages/parser) | the reference parser: text in, a JSON scene out, with a plugin system |
-| [`conv-cli`](./packages/cli) | `conv check` and `conv parse` |
+| [`@conversation/spec`](./packages/parser) | the reference parser: text in, a JSON scene out, with a plugin system |
+| [`@conversation/cli`](./packages/cli) | `conv check` and `conv parse` |
 | [`.agents/skills/conv`](./.agents/skills/conv/SKILL.md) | a skill that teaches an AI agent to write scripts and check them |
 
 ## Quick start
 
 ```sh
-npx conv-cli check scripts/*.conv
-npx conv-cli parse scripts/attic.conv > attic.json
+npx @conversation/cli check scripts/*.conv
+npx @conversation/cli parse scripts/attic.conv > attic.json
 ```
 
 ```ts
-import { parse } from 'conv-parser';
+import { parse } from '@conversation/spec';
 
 const scene = parse(text, { source: 'attic.conv' });
 for (const item of scene.items) {
@@ -79,7 +79,7 @@ A parser tells you what a script says. A renderer makes it heard.
 
 | | |
 |---|---|
-| [`conv-parser`](./packages/parser) | the reference parser, in TypeScript |
+| [`@conversation/spec`](./packages/parser) | the reference parser, in TypeScript |
 | [Constructive Media](https://github.com/constructive-io/constructive-media) | a renderer: `me say scene.conv out/scene.flac` says every line through a speech model of your choosing, checks each one by listening back, and mixes the scene. Its own parser, in Python, is held to the fixtures here |
 
 Written another one? The [conformance fixtures](./__fixtures__) are how to know it agrees.
@@ -92,7 +92,7 @@ and how to check the result. Agents that read `.agents/skills/` pick it up in th
 repository. To have it anywhere else:
 
 ```sh
-npx skills add https://github.com/constructive-io/conv-spec --skill conv
+npx skills add https://github.com/constructive-io/conversation-spec --skill conv
 ```
 
 Rendering a script is the `constructive-media` skill, in
@@ -110,7 +110,7 @@ are plugins, and you can add your own — keys, enum values, tracks and
 pnpm install
 pnpm build
 pnpm test
-UPDATE_FIXTURES=1 pnpm --filter conv-parser test   # after a deliberate grammar change
+UPDATE_FIXTURES=1 pnpm --filter @conversation/spec test   # after a deliberate grammar change
 ```
 
 ## License

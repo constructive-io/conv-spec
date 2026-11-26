@@ -1,11 +1,11 @@
 {
-  "name": "conv-spec",
+  "name": "conversation-spec",
   "version": "0.0.1",
   "author": "Constructive <developers@constructive.io>",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/constructive-io/conv-spec"
+    "url": "https://github.com/constructive-io/conversation-spec"
   },
   "license": "MIT",
   "publishConfig": {

@@ -1,4 +1,4 @@
-import { ConvError, formatProblems, parse, Scene } from 'conv-parser';
+import { ConvError, formatProblems, parse, Scene } from '@conversation/spec';
 import { existsSync, readFileSync, realpathSync } from 'fs';
 import { dirname, join, resolve } from 'path';
 
