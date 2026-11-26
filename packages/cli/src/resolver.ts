@@ -1,4 +1,4 @@
-import type { IncludeResolver } from '@constructive-io/conv-parser';
+import type { IncludeResolver } from 'conv-parser';
 import { existsSync, readdirSync, readFileSync, realpathSync, statSync } from 'fs';
 import { homedir } from 'os';
 import { dirname, isAbsolute, join, resolve } from 'path';

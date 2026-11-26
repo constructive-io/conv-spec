@@ -1,4 +1,4 @@
-# @constructive-io/conv-parser
+# conv-parser
 
 <p align="center" width="100%">
   <img height="250" src="https://raw.githubusercontent.com/constructive-io/constructive/refs/heads/main/assets/outline-logo.svg" />
@@ -9,7 +9,7 @@
     <img height="20" src="https://github.com/constructive-io/conv-spec/actions/workflows/run-tests.yaml/badge.svg" />
   </a>
   <a href="https://github.com/constructive-io/conv-spec/blob/main/LICENSE"><img height="20" src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
-  <a href="https://www.npmjs.com/package/@constructive-io/conv-parser"><img height="20" src="https://img.shields.io/github/package-json/v/constructive-io/conv-spec?filename=packages%2Fparser%2Fpackage.json"/></a>
+  <a href="https://www.npmjs.com/package/conv-parser"><img height="20" src="https://img.shields.io/github/package-json/v/constructive-io/conv-spec?filename=packages%2Fparser%2Fpackage.json"/></a>
 </p>
 
 The reference parser for [`.conv`](../../SPEC.md): text in, a JSON-shaped scene
@@ -18,13 +18,13 @@ out. No dependencies, no filesystem, runs anywhere.
 ## Install
 
 ```sh
-npm install @constructive-io/conv-parser
+npm install conv-parser
 ```
 
 ## Parse
 
 ```ts
-import { ConvError, parse } from '@constructive-io/conv-parser';
+import { ConvError, parse } from 'conv-parser';
 
 try {
   const scene = parse(text, { source: 'attic.conv' });
@@ -51,7 +51,7 @@ and typed in `Scene`, `Item` and `Segment`.
 The parser never reads files. `@include` goes through a resolver you pass in:
 
 ```ts
-import { memoryResolver, parse } from '@constructive-io/conv-parser';
+import { memoryResolver, parse } from 'conv-parser';
 
 parse(text, { include: memoryResolver({ studio: studioBankText }) });
 ```
@@ -74,7 +74,7 @@ Everything beyond the core grammar is a plugin. The defaults:
 Pass your own alongside them:
 
 ```ts
-import { ConvPlugin, defaultPlugins, effects, num, parse, slides, speakers, str, video } from '@constructive-io/conv-parser';
+import { ConvPlugin, defaultPlugins, effects, num, parse, slides, speakers, str, video } from 'conv-parser';
 
 const chapters: ConvPlugin = {
   name: 'chapters',

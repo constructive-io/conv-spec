@@ -1,4 +1,4 @@
-import { parse } from '@constructive-io/conv-parser';
+import { parse } from 'conv-parser';
 import { existsSync, readFileSync } from 'fs';
 import { dirname, join, resolve } from 'path';
 
