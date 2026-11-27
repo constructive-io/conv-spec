@@ -124,7 +124,10 @@ HOST: Let's begin where we left off.
 Sounds and tracks that several scripts share go in a bank, a `.sounds` file
 holding only `@sounds`, `@tracks` and further includes. `@include studio` in a
 script's header reads `banks/studio.sounds`, and the script's own declaration
-of a name wins over the bank's.
+of a name wins over the bank's. A bank brings in only what it holds or
+includes itself: two banks are two `@include` lines. A bank that lives in a
+library a renderer added is found by that renderer; `conv check` alone
+reports it as not found.
 
 ## Rules that catch people out
 
@@ -297,4 +300,5 @@ parser is held to the same answers by the files in
 | `narrated-video` | the same | A script and a page to a video: decks, walkthroughs, animations |
 | `narrated-document` | the same | A document that prints as a PDF and is filmed being read |
 | `voice-library` | [voice-boilerplates](https://github.com/constructive-io/voice-boilerplates) | A repository of voices, sounds and faces a renderer can add |
+| `build-a-voice` | the same | From a recording of a person to a voice a persona can speak in |
 | `media-engine-plugins` | [media-engine-plugins](https://github.com/constructive-io/media-engine-plugins) | Adapters for that engine under copyleft licenses |
