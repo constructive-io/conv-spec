@@ -1,6 +1,6 @@
 {
   "name": "@conversation/spec",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Constructive <developers@constructive.io>",
   "description": "Parser for .conv, a plain-text screenplay format for multi-voice audio: cast, dialogue, sound cues and tracks",
   "main": "index.js",
