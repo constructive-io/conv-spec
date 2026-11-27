@@ -1,25 +1,31 @@
-## Conversation and Media Engine ecosystem
+## 📚 Agent skills
 
-[Conversation Format](https://github.com/constructive-io/conversation-format) is a plain-text screenplay format for multi-voice audio. A `.conv` script describes the cast, dialogue, pauses, and sound cues; it leaves voices, mixing, and playback to the renderer.
+* [Conversation Format skills](https://github.com/constructive-io/conversation-format/tree/main/.agents/skills): teach Claude Code or another coding agent to write and check `.conv` scripts.
 
-- [`@conversation/spec` on npm](https://www.npmjs.com/package/@conversation/spec) · [source](https://github.com/constructive-io/conversation-format/tree/main/packages/parser): the TypeScript reference parser turns a script into a scene.
-- [`@conversation/cli` on npm](https://www.npmjs.com/package/@conversation/cli) · [source](https://github.com/constructive-io/conversation-format/tree/main/packages/cli): run `conv check` to validate scripts or `conv parse` to emit JSON.
-- [`SPEC.md`](https://github.com/constructive-io/conversation-format/blob/main/SPEC.md): the grammar, backed by [conformance fixtures](https://github.com/constructive-io/conversation-format/tree/main/__fixtures__).
-- [`conv` agent skill](https://github.com/constructive-io/conversation-format/blob/main/.agents/skills/conv/SKILL.md): write and check scripts with a coding agent. Install it with `npx skills add constructive-io/conversation-format --skill conv`.
+```bash
+npx skills add constructive-io/conversation-format
+```
 
-### Render .conv scripts with Constructive Media
+## Conversation Format ecosystem
 
-[Constructive Media (Media Engine)](https://github.com/constructive-io/media-engine) implements Conversation Format. It turns scripts into multi-voice recordings with sound cues and a mix, then can film a deck, walkthrough, or other page in sync with the recording.
+Write plain-text scripts for multi-voice audio with dialogue, pauses, and sound cues.
 
-- [`constructive-media` Python package](https://github.com/constructive-io/media-engine/tree/main/python/constructive_media): the engine for media processing, speech, and rendering.
-- [`media` CLI](https://github.com/constructive-io/media-engine#usage): use `media say` to render a recording and `media film` to make a video.
-- [`media-core`](https://github.com/constructive-io/media-engine/tree/main/packages/media-core): personas, voices, assets, takes, and provenance.
-- [`media-video`](https://github.com/constructive-io/media-engine/tree/main/packages/media-video): shots, frames, transcripts, passages, timelines, and editing decisions.
-- [`media-audio`](https://github.com/constructive-io/media-engine/tree/main/packages/media-audio): speech synthesis, emotions, renders, and review.
-- [Plugins](https://github.com/constructive-io/media-engine-plugins): optional adapters for tools under copyleft licenses.
-- [Boilerplates](https://github.com/constructive-io/media-engine-boilerplates): starter projects for narrated decks, walkthroughs, animations, and documents.
-- [Library index](https://github.com/constructive-io/media-engine-libraries): find libraries of voices, sounds, and faces.
-- [CC0 foley library](https://github.com/constructive-io/media-engine-library-foley): sound effects, ambience loops, and music beds.
+### 📝 Spec
+
+* [Conversation Format spec](https://github.com/constructive-io/conversation-format/blob/main/SPEC.md): the grammar, backed by [conformance fixtures](https://github.com/constructive-io/conversation-format/tree/main/__fixtures__).
+
+### 📦 Key packages
+
+* [@conversation/spec](https://www.npmjs.com/package/@conversation/spec): the TypeScript reference parser.
+* [@conversation/cli](https://www.npmjs.com/package/@conversation/cli): use `conv check` to validate scripts and `conv parse` to emit JSON.
+
+### 🎬 Render .conv scripts with Constructive Media
+
+* [Media Engine](https://github.com/constructive-io/media-engine): turn scripts into multi-voice audio with `media say`, then make videos with `media film`.
+* [Starters](https://github.com/constructive-io/media-engine-boilerplates): scaffold narrated decks, walkthroughs, animations, and documents.
+* [Plugins](https://github.com/constructive-io/media-engine-plugins): optional adapters for tools under copyleft licenses.
+* [Libraries](https://github.com/constructive-io/media-engine-libraries): find voices, sounds, and faces, including the [CC0 foley library](https://github.com/constructive-io/media-engine-library-foley).
+* [Media Engine skills](https://github.com/constructive-io/media-engine/tree/main/.agents/skills): learn to render scripts, stage video, and work with libraries.
 
 ## Credits
 
