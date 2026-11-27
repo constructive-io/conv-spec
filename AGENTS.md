@@ -12,7 +12,7 @@ The `.conv` format: its grammar, conformance fixtures, and the reference parser.
 | `packages/cli` | `@conversation/cli` — `conv check` / `conv parse`, file resolver |
 | `.agents/skills/conv/SKILL.md` | the skill: how to write a script and check it |
 
-[Constructive Media](https://github.com/constructive-io/constructive-media) implements the
+[Constructive Media](https://github.com/constructive-io/media-engine) implements the
 format: it renders scripts, and its parser is held to the fixtures here. A grammar change
 is not finished until that parser agrees, so say so when you make one.
 

@@ -80,7 +80,7 @@ A parser tells you what a script says. A renderer makes it heard.
 | | |
 |---|---|
 | [`@conversation/spec`](./packages/parser) | the reference parser, in TypeScript |
-| [Constructive Media](https://github.com/constructive-io/constructive-media) | a renderer: `media say scene.conv out/scene.flac` says every line through a speech model of your choosing, checks each one by listening back, and mixes the scene. `media film` then records a page following it, as a video. Its own parser, in Python, is held to the fixtures here |
+| [Constructive Media](https://github.com/constructive-io/media-engine) | a renderer: `media say scene.conv out/scene.flac` says every line through a speech model of your choosing, checks each one by listening back, and mixes the scene. `media film` then records a page following it, as a video. Its own parser, in Python, is held to the fixtures here |
 
 Written another one? The [conformance fixtures](./__fixtures__) are how to know it agrees.
 
@@ -88,8 +88,7 @@ Starting points, each a script with what it needs beside it:
 
 | | |
 |---|---|
-| [media-boilerplates](https://github.com/constructive-io/media-boilerplates) | a workspace, and what goes in one: a narrated deck, a walkthrough of an application, an animation, a document that prints as a PDF and is filmed being read aloud |
-| [voice-boilerplates](https://github.com/constructive-io/voice-boilerplates) | a library of voices, sounds and faces, with the consent for each voice written down |
+| [media-engine-boilerplates](https://github.com/constructive-io/media-engine-boilerplates) | a workspace, and what goes in one: a narrated deck, a walkthrough of an application, an animation, a document that prints as a PDF and is filmed being read aloud; and a library of voices, sounds and faces, with the consent for each voice written down |
 
 ## Working with an AI agent
 
@@ -103,7 +102,7 @@ npx skills add https://github.com/constructive-io/conversation-format --skill co
 ```
 
 Rendering a script is the `constructive-media` skill, in
-[Constructive Media](https://github.com/constructive-io/constructive-media)'s repository.
+[Constructive Media](https://github.com/constructive-io/media-engine)'s repository.
 
 ## Extending the format
 

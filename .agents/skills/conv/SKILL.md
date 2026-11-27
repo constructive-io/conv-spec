@@ -31,7 +31,7 @@ that is right the first time, and how to check it.
 | The format | [SPEC.md](../../../SPEC.md) | says what a script may hold |
 | `@conversation/spec` | npm, and [`packages/parser`](../../../packages/parser) | reads a script: text in, a scene as JSON out |
 | `@conversation/cli` | npm, and [`packages/cli`](../../../packages/cli) | the `conv` command: `conv check` and `conv parse` |
-| A renderer | such as [Constructive Media](https://github.com/constructive-io/constructive-media) | turns a script into sound |
+| A renderer | such as [Constructive Media](https://github.com/constructive-io/media-engine) | turns a script into sound |
 
 Nothing in this repository makes a sound, and nothing in it calls a renderer.
 A renderer reads the script itself, and gives the same answers as this parser
@@ -213,7 +213,7 @@ says `ok`.
 ## Hear it
 
 The format says nothing about how a script becomes sound; a renderer does that.
-[Constructive Media](https://github.com/constructive-io/constructive-media) is
+[Constructive Media](https://github.com/constructive-io/media-engine) is
 an implementation: it reads a script with a parser held to this repository's
 conformance files, says every line through a speech model you point it at,
 listens back to each one, and mixes the scene.
@@ -258,7 +258,7 @@ Constructive Media films it: after `media say`, `media film out/scene.flac
 out/scene.mp4 --page FOLDER` records a page of HTML whose elements carry the
 same names (`data-slide="what"`, `data-step="1"`) following the sound. Starting
 points with a page, a script and a `package.json` are in
-[media-boilerplates](https://github.com/constructive-io/media-boilerplates): a
+[media-engine-boilerplates](https://github.com/constructive-io/media-engine-boilerplates): a
 deck, a walkthrough, an animation, and a document that is read aloud.
 
 ## Before you call a script done
@@ -295,10 +295,10 @@ parser is held to the same answers by the files in
 
 | Skill | Where | For |
 | --- | --- | --- |
-| `constructive-media` | [constructive-media](https://github.com/constructive-io/constructive-media) | Rendering a script: voices, the speech server, `media say`, `media film` |
-| `media-workspace` | [media-boilerplates](https://github.com/constructive-io/media-boilerplates) | Starting a project of scripts and pages, and building it |
+| `constructive-media` | [media-engine](https://github.com/constructive-io/media-engine) | Rendering a script: voices, the speech server, `media say`, `media film` |
+| `media-workspace` | [media-engine-boilerplates](https://github.com/constructive-io/media-engine-boilerplates) | Starting a project of scripts and pages, and building it |
 | `narrated-video` | the same | A script and a page to a video: decks, walkthroughs, animations |
 | `narrated-document` | the same | A document that prints as a PDF and is filmed being read |
-| `voice-library` | [voice-boilerplates](https://github.com/constructive-io/voice-boilerplates) | A repository of voices, sounds and faces a renderer can add |
+| `voice-library` | the same | A repository of voices, sounds and faces a renderer can add |
 | `build-a-voice` | the same | From a recording of a person to a voice a persona can speak in |
 | `media-engine-plugins` | [media-engine-plugins](https://github.com/constructive-io/media-engine-plugins) | Adapters for that engine under copyleft licenses |
