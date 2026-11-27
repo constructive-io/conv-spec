@@ -88,8 +88,7 @@ Starting points, each a script with what it needs beside it:
 
 | | |
 |---|---|
-| [video-boilerplates](https://github.com/constructive-io/video-boilerplates) | a narrated deck, a walkthrough of an application, an animation |
-| [document-boilerplates](https://github.com/constructive-io/document-boilerplates) | a document that prints as a PDF and is filmed being read aloud |
+| [media-boilerplates](https://github.com/constructive-io/media-boilerplates) | a workspace, and what goes in one: a narrated deck, a walkthrough of an application, an animation, a document that prints as a PDF and is filmed being read aloud |
 | [voice-boilerplates](https://github.com/constructive-io/voice-boilerplates) | a library of voices, sounds and faces, with the consent for each voice written down |
 
 ## Working with an AI agent

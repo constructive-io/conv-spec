@@ -254,11 +254,9 @@ on a character are what a lower-third shows.
 Constructive Media films it: after `me say`, `me film out/scene.flac
 out/scene.mp4 --page FOLDER` records a page of HTML whose elements carry the
 same names (`data-slide="what"`, `data-step="1"`) following the sound. Starting
-points with a page, a script and a `Makefile`:
-[video-boilerplates](https://github.com/constructive-io/video-boilerplates) for
-a deck, a walkthrough or an animation, and
-[document-boilerplates](https://github.com/constructive-io/document-boilerplates)
-for a document that is read aloud.
+points with a page, a script and a `package.json` are in
+[media-boilerplates](https://github.com/constructive-io/media-boilerplates): a
+deck, a walkthrough, an animation, and a document that is read aloud.
 
 ## Before you call a script done
 
@@ -295,7 +293,8 @@ parser is held to the same answers by the files in
 | Skill | Where | For |
 | --- | --- | --- |
 | `constructive-media` | [constructive-media](https://github.com/constructive-io/constructive-media) | Rendering a script: voices, the speech server, `me say`, `me film` |
-| `narrated-video` | [video-boilerplates](https://github.com/constructive-io/video-boilerplates) | A script and a page to a video: decks, walkthroughs, animations |
-| `narrated-document` | [document-boilerplates](https://github.com/constructive-io/document-boilerplates) | A document that prints as a PDF and is filmed being read |
+| `media-workspace` | [media-boilerplates](https://github.com/constructive-io/media-boilerplates) | Starting a project of scripts and pages, and building it |
+| `narrated-video` | the same | A script and a page to a video: decks, walkthroughs, animations |
+| `narrated-document` | the same | A document that prints as a PDF and is filmed being read |
 | `voice-library` | [voice-boilerplates](https://github.com/constructive-io/voice-boilerplates) | A repository of voices, sounds and faces a renderer can add |
 | `media-engine-plugins` | [media-engine-plugins](https://github.com/constructive-io/media-engine-plugins) | Adapters for that engine under copyleft licenses |
