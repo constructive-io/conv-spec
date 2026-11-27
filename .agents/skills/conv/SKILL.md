@@ -4,7 +4,7 @@ description: The `.conv` format — a plain-text screenplay for multi-voice audi
 compatibility: Node.js 20+ for the reference parser and the `conv` command
 metadata:
   author: constructive-io
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
 # The `.conv` format
@@ -226,6 +226,40 @@ sound. Setting it up is the `constructive-media` skill in that repository. Two t
 it asks of a script today: every persona needs a voice, and a sound needs a
 `file:`, since it does not yet make a sound from a `prompt:`.
 
+## See it
+
+A script can also say what is on screen while it is heard. Three marks do it.
+They take no time; a renderer records the moment each one falls.
+
+| Mark | Does |
+| --- | --- |
+| `[slide intro]`, `[slide intro step:2]` | shows the slide `intro`, and its second build, from here |
+| `[speakers lower-third captions]` | what a player draws of whoever is speaking: any of `faces`, `lower-third`, `waveform`, `captions`; `all`; `off` |
+| `[video CLIP]` | plays a clip that takes the screen. `CLIP` is declared with the sounds, with a `file:` |
+
+```
+@characters
+NARRATOR: { persona: narrator, name: Ada Marsh, title: Keeper of the light }
+---
+[speakers lower-third captions]
+[slide title]
+NARRATOR: Three things are written down every night.
+[slide what step:1]
+NARRATOR: The first is when the lamp was lit.
+```
+
+A mark goes on the line before the words it belongs with. `name:` and `title:`
+on a character are what a lower-third shows.
+
+Constructive Media films it: after `me say`, `me film out/scene.flac
+out/scene.mp4 --page FOLDER` records a page of HTML whose elements carry the
+same names (`data-slide="what"`, `data-step="1"`) following the sound. Starting
+points with a page, a script and a `Makefile`:
+[video-boilerplates](https://github.com/constructive-io/video-boilerplates) for
+a deck, a walkthrough or an animation, and
+[document-boilerplates](https://github.com/constructive-io/document-boilerplates)
+for a document that is read aloud.
+
 ## Before you call a script done
 
 - **Run the check.** `conv check` says `ok` and exits 0. Do not judge a script
@@ -260,5 +294,8 @@ parser is held to the same answers by the files in
 
 | Skill | Where | For |
 | --- | --- | --- |
-| `constructive-media` | [constructive-media](https://github.com/constructive-io/constructive-media) | Rendering a script: voices, the speech server, `me say` |
+| `constructive-media` | [constructive-media](https://github.com/constructive-io/constructive-media) | Rendering a script: voices, the speech server, `me say`, `me film` |
+| `narrated-video` | [video-boilerplates](https://github.com/constructive-io/video-boilerplates) | A script and a page to a video: decks, walkthroughs, animations |
+| `narrated-document` | [document-boilerplates](https://github.com/constructive-io/document-boilerplates) | A document that prints as a PDF and is filmed being read |
+| `voice-library` | [voice-boilerplates](https://github.com/constructive-io/voice-boilerplates) | A repository of voices, sounds and faces a renderer can add |
 | `media-engine-plugins` | [media-engine-plugins](https://github.com/constructive-io/media-engine-plugins) | Adapters for that engine under copyleft licenses |
