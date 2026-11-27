@@ -80,9 +80,17 @@ A parser tells you what a script says. A renderer makes it heard.
 | | |
 |---|---|
 | [`@conversation/spec`](./packages/parser) | the reference parser, in TypeScript |
-| [Constructive Media](https://github.com/constructive-io/constructive-media) | a renderer: `me say scene.conv out/scene.flac` says every line through a speech model of your choosing, checks each one by listening back, and mixes the scene. Its own parser, in Python, is held to the fixtures here |
+| [Constructive Media](https://github.com/constructive-io/constructive-media) | a renderer: `me say scene.conv out/scene.flac` says every line through a speech model of your choosing, checks each one by listening back, and mixes the scene. `me film` then records a page following it, as a video. Its own parser, in Python, is held to the fixtures here |
 
 Written another one? The [conformance fixtures](./__fixtures__) are how to know it agrees.
+
+Starting points, each a script with what it needs beside it:
+
+| | |
+|---|---|
+| [video-boilerplates](https://github.com/constructive-io/video-boilerplates) | a narrated deck, a walkthrough of an application, an animation |
+| [document-boilerplates](https://github.com/constructive-io/document-boilerplates) | a document that prints as a PDF and is filmed being read aloud |
+| [voice-boilerplates](https://github.com/constructive-io/voice-boilerplates) | a library of voices, sounds and faces, with the consent for each voice written down |
 
 ## Working with an AI agent
 
