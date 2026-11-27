@@ -16,6 +16,10 @@ of sounds, and a script of dialogue, pauses and cues. It says who speaks, what
 they say and how, and what is heard around them — never how any of it is
 produced. Voices, sound, mixing and playback belong to the renderer.
 
+```bash
+npx skills add constructive-io/conversation-format
+```
+
 ```
 @characters
 ALICE: { persona: alice }
