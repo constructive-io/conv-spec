@@ -216,12 +216,12 @@ conformance files, says every line through a speech model you point it at,
 listens back to each one, and mixes the scene.
 
 ```sh
-me conv scene.conv                         # the same check, in the renderer
-me voice alice a-voice-your-speech-server-knows --new
-me say scene.conv out/scene.flac --stems   # the scene as sound
+media conv scene.conv                      # the same check, in the renderer
+media voice alice a-voice-your-speech-server-knows --new
+media say scene.conv out/scene.flac --stems  # the scene as sound
 ```
 
-`me` is that engine's command, not this repository's: `conv` never makes a
+`media` is that engine's command, not this repository's: `conv` never makes a
 sound. Setting it up is the `constructive-media` skill in that repository. Two things
 it asks of a script today: every persona needs a voice, and a sound needs a
 `file:`, since it does not yet make a sound from a `prompt:`.
@@ -251,7 +251,7 @@ NARRATOR: The first is when the lamp was lit.
 A mark goes on the line before the words it belongs with. `name:` and `title:`
 on a character are what a lower-third shows.
 
-Constructive Media films it: after `me say`, `me film out/scene.flac
+Constructive Media films it: after `media say`, `media film out/scene.flac
 out/scene.mp4 --page FOLDER` records a page of HTML whose elements carry the
 same names (`data-slide="what"`, `data-step="1"`) following the sound. Starting
 points with a page, a script and a `package.json` are in
@@ -292,7 +292,7 @@ parser is held to the same answers by the files in
 
 | Skill | Where | For |
 | --- | --- | --- |
-| `constructive-media` | [constructive-media](https://github.com/constructive-io/constructive-media) | Rendering a script: voices, the speech server, `me say`, `me film` |
+| `constructive-media` | [constructive-media](https://github.com/constructive-io/constructive-media) | Rendering a script: voices, the speech server, `media say`, `media film` |
 | `media-workspace` | [media-boilerplates](https://github.com/constructive-io/media-boilerplates) | Starting a project of scripts and pages, and building it |
 | `narrated-video` | the same | A script and a page to a video: decks, walkthroughs, animations |
 | `narrated-document` | the same | A document that prints as a PDF and is filmed being read |
