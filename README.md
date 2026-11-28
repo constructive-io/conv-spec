@@ -37,6 +37,23 @@ ALICE[whisper, seed:207]: Then we go up {firm: together}.
 [pause 1.5]
 ```
 
+## Features
+
+* 🎭 **[A cast of characters](./SPEC.md#characters)** — `@characters` gives each speaker a `persona`, a default `emotion`, a `seed` and a `track`; what voice a persona has is the renderer's to decide
+* 💬 **[Dialogue with direction](./SPEC.md#dialogue-overrides)** — `BOB[excited, seed:303]: …` sets the emotion and the take of one line; `<break 0.4>`, `{firm: together}` and `<sfx CREAK>` work inside it
+* 🔊 **[Sounds from a file or a description](./SPEC.md#sounds)** — `@sounds` declares each one with a `file:` or a `prompt:`; `[CREAK hold]` plays it where it falls in the script, with `at`, `vol`, `pan` and fades
+* 🎚️ **[Tracks](./SPEC.md#7-tracks)** — `dialogue`, `foreground`, `ambience`, `music` and `transition` are built in and `@tracks` declares more, with `level`, `pan` and `duck`; `[music BED fade-in:3]` and `[music off]` start and stop a bed
+* 🏦 **[Sound banks](./SPEC.md#8-banks-include)** — `@include studio` pulls `@sounds` and `@tracks` from a `.sounds` file shared between scripts, and the script's own declaration wins
+* 🎛️ **[Effects](./SPEC.md#10-effects)** — `reverb`, `delay` and `compress` on a character, a line, a span or a track
+* 📍 **[Marks for the screen](./SPEC.md#11-extensions)** — `[slide ID step:N]`, `[speakers faces captions]` and `[video CLIP]` say what a player shows and when; a mark takes no time
+* 🧩 **[Plugins](./packages/parser#plugins)** — effects, slides, speakers and video are plugins of the reference parser, and your own can add keys, enum values, tracks and `[directives]`
+* 🚨 **[Every problem at once](./SPEC.md#12-errors)** — a parser reports each mistake with its line, what is wrong and how to fix it; nothing is silently ignored or defaulted
+* 📦 **[A reference parser](./packages/parser)** — `@conversation/spec` is TypeScript with no dependencies: `parse(text)` returns [the scene](./SPEC.md#13-the-parsed-scene) as JSON
+* ⌨️ **[A command line](./packages/cli)** — `conv check` reports the problems in every script it is given and exits 1 if there are any; `conv parse` prints the scene as JSON, and `--banks <dir>` says where `@include` looks
+* ✅ **[Conformance fixtures](./__fixtures__)** — scripts with exactly what they parse to, or the errors they report, so any parser can be held to the format
+* 🔁 **[Any renderer](#implementations)** — the format says what is heard and never how it is produced; [Constructive Media](https://github.com/constructive-io/media-engine) is one renderer, and the fixtures are there for the next
+* 🤖 **[An agent skill](#working-with-an-ai-agent)** — `npx skills add constructive-io/conversation-format` teaches a coding agent to write scripts and check them
+
 ## What's here
 
 | | |
