@@ -1,3 +1,6 @@
+@characters
+HOST: { persona: host }
+
 @sounds
 GEN: { prompt: "a whoosh", duration: 1 }
 ---
@@ -8,3 +11,4 @@ GEN: { prompt: "a whoosh", duration: 1 }
 [speakers all faces]
 [video GEN]
 [video GEN at:3]
+HOST: And here <slide Problem> it is, <slide intro page:2> twice.

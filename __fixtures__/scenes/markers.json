@@ -58,8 +58,71 @@
       }
     },
     {
-      "type": "track",
+      "type": "line",
       "line": 11,
+      "speaker": "HOST",
+      "text": "Three things matter. <slide problem step:2> The first is time <slide problem step:3>, and an <aside> stays words.",
+      "overrides": {},
+      "segments": [
+        {
+          "type": "text",
+          "text": "Three things matter.",
+          "overrides": {}
+        },
+        {
+          "type": "mark",
+          "kind": "slide",
+          "data": {
+            "id": "problem",
+            "step": 2
+          }
+        },
+        {
+          "type": "text",
+          "text": "The first is time",
+          "overrides": {}
+        },
+        {
+          "type": "mark",
+          "kind": "slide",
+          "data": {
+            "id": "problem",
+            "step": 3
+          }
+        },
+        {
+          "type": "text",
+          "text": ", and an <aside> stays words.",
+          "overrides": {}
+        }
+      ]
+    },
+    {
+      "type": "line",
+      "line": 12,
+      "speaker": "HOST",
+      "text": "<speakers captions> Read along.",
+      "overrides": {},
+      "segments": [
+        {
+          "type": "mark",
+          "kind": "speakers",
+          "data": {
+            "show": [
+              "captions"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "text": "Read along.",
+          "overrides": {}
+        }
+      ]
+    },
+    {
+      "type": "track",
+      "line": 13,
       "track": "video",
       "action": "play",
       "sound": "COVER",
@@ -71,7 +134,7 @@
     },
     {
       "type": "mark",
-      "line": 12,
+      "line": 14,
       "kind": "speakers",
       "data": {
         "show": [
@@ -82,7 +145,7 @@
     },
     {
       "type": "mark",
-      "line": 13,
+      "line": 15,
       "kind": "speakers",
       "data": {
         "show": [
@@ -93,7 +156,7 @@
     },
     {
       "type": "mark",
-      "line": 14,
+      "line": 16,
       "kind": "speakers",
       "data": {
         "show": []

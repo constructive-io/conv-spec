@@ -13,7 +13,9 @@ export type Config = Record<string, Value>;
 export type Segment =
   | { type: 'text'; text: string; overrides: Config }
   | { type: 'break'; seconds: number }
-  | { type: 'sfx'; sound: string; overrides: Config };
+  | { type: 'sfx'; sound: string; overrides: Config }
+  /** `<slide ID step:1>` inside a line: the mark falls where the words have reached. */
+  | { type: 'mark'; kind: string; data: Record<string, unknown> };
 
 interface ItemBase {
   /** 1-based line in the source. */

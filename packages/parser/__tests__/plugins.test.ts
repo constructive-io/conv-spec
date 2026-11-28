@@ -87,6 +87,24 @@ describe('plugins', () => {
     expect(() => parse('', { plugins: [a, b] })).toThrow(/"a" and "b" both define/);
   });
 
+  it('reads a directive written inside a line as a mark among its words', () => {
+    const chapter: ConvPlugin = { name: 'chapter', directives: { chapter: (args) => ({ title: args }) } };
+    const head = '@characters\nDAN: { persona: dan }\n---\n';
+    const [line] = parse(head + 'DAN: One. <chapter The Attic> Two <chapter End>.\n', { plugins: [chapter] }).items;
+    expect(line).toMatchObject({
+      type: 'line',
+      segments: [
+        { type: 'text', text: 'One.' },
+        { type: 'mark', kind: 'chapter', data: { title: 'The Attic' } },
+        { type: 'text', text: 'Two.' },
+        { type: 'mark', kind: 'chapter', data: { title: 'End' } },
+      ],
+    });
+    // Without the plugin, the same writing is words, as it always was.
+    const [plain] = parse(head + 'DAN: One. <chapter The Attic> Two.\n', { plugins: [] }).items;
+    expect(plain).toMatchObject({ segments: [{ type: 'text', text: 'One. <chapter The Attic> Two.' }] });
+  });
+
   it('parses the core grammar with no plugins at all', () => {
     expect(() => parse('[slide intro]\n', { plugins: [] })).toThrow(/unknown track `slide`/);
     const s = parse('@characters\nDAN: { persona: dan }\n---\nDAN: hi\n', { plugins: [] });

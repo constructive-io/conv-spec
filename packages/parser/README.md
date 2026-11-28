@@ -67,7 +67,7 @@ Everything beyond the core grammar is a plugin. The defaults:
 | Plugin | Adds |
 |---|---|
 | `effects()` | `reverb`, `reverb-mix`, `delay`, `delay-feedback`, `delay-mix`, `compress` |
-| `slides()` | `[slide ID step:N]` |
+| `slides()` | `[slide ID step:N]`, and `<slide ID step:N>` inside a line |
 | `speakers()` | `[speakers …]`; `name:` and `title:` on characters |
 | `video()` | the `video` track and `[video CLIP]` |
 
@@ -103,7 +103,7 @@ A `ConvPlugin` can contribute:
 | `enums` | values for a named enum; plugins naming the same enum add to it |
 | `tracks` | built-in tracks |
 | `reserved` | words that can't name a track (directive names are reserved automatically) |
-| `directives` | `[name …]` handlers that return a mark's data |
+| `directives` | `[name …]` handlers that return a mark's data; the same handler reads `<name …>` inside a line |
 | `trackRules` | checks for directives on a named track |
 | `finalize` | a pass over the finished scene that can report problems |
 

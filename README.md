@@ -45,7 +45,7 @@ ALICE[whisper, seed:207]: Then we go up {firm: together}.
 * 🎚️ **[Tracks](./SPEC.md#7-tracks)** — `dialogue`, `foreground`, `ambience`, `music` and `transition` are built in and `@tracks` declares more, with `level`, `pan` and `duck`; `[music BED fade-in:3]` and `[music off]` start and stop a bed
 * 🏦 **[Sound banks](./SPEC.md#8-banks-include)** — `@include studio` pulls `@sounds` and `@tracks` from a `.sounds` file shared between scripts, and the script's own declaration wins
 * 🎛️ **[Effects](./SPEC.md#10-effects)** — `reverb`, `delay` and `compress` on a character, a line, a span or a track
-* 📍 **[Marks for the screen](./SPEC.md#11-extensions)** — `[slide ID step:N]`, `[speakers faces captions]` and `[video CLIP]` say what a player shows and when; a mark takes no time
+* 📍 **[Marks for the screen](./SPEC.md#11-extensions)** — `[slide ID step:N]`, `[speakers faces captions]` and `[video CLIP]` say what a player shows and when; a mark takes no time, and `<slide ID step:N>` puts one in the middle of a line
 * 🧩 **[Plugins](./packages/parser#plugins)** — effects, slides, speakers and video are plugins of the reference parser, and your own can add keys, enum values, tracks and `[directives]`
 * 🚨 **[Every problem at once](./SPEC.md#12-errors)** — a parser reports each mistake with its line, what is wrong and how to fix it; nothing is silently ignored or defaulted
 * 📦 **[A reference parser](./packages/parser)** — `@conversation/spec` is TypeScript with no dependencies: `parse(text)` returns [the scene](./SPEC.md#13-the-parsed-scene) as JSON

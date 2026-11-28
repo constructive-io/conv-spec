@@ -165,11 +165,12 @@ Inside the text of a line:
 | `{emotion: text}` | a span in another emotion |
 | `{whisper, reverb:hall: text}` | a span with overrides (same keys as a line, minus `track`) |
 | `<sfx SOUND …>` | a cue that lands mid-line |
+| `<slide ID step:N>` | a mark (§11) that falls mid-line |
 
-A line becomes a list of **segments**: text, breaks and sfx. Text outside spans
-has no overrides of its own. A fragment of bare punctuation after a span joins
-the text before it (`{firm: talk}.` speaks "talk." once). A line with no markers
-is exactly one text segment.
+A line becomes a list of **segments**: text, breaks, sfx and marks. Text outside
+spans has no overrides of its own. A fragment of bare punctuation after a span
+joins the text before it (`{firm: talk}.` speaks "talk." once). A line with no
+markers is exactly one text segment.
 
 ## 6. Cues and plays
 
@@ -281,6 +282,18 @@ The core grammar is §1–§9. Everything else — including effects — is a
 A **mark** is silent and timeless: it occupies no time, and a renderer records
 the moment it falls (for a deck, a video edit, a player's UI).
 
+A directive that makes a mark can also be written **inside a line**, in angle
+brackets: `<name …>` takes what `[name …]` takes.
+
+```
+ALICE: Three things matter. <slide reasons step:1> The first is time.
+```
+
+The mark falls where the words have reached, and the line is still said in one
+breath: the words on either side of a mark are not two takes. In the parsed
+scene it is a segment of the line, `{ "type": "mark", "kind": "slide", "data":
+{ … } }`. A `<word …>` that names no directive is words, as it always was.
+
 ### 11.1 Slides
 
 `[slide ID]`, `[slide ID step:N]` — show slide ID, and its Nth build, from here.
@@ -327,7 +340,8 @@ resolved) and values coerced (§9).
       "overrides": { "emotion": "excited" },
       "segments": [ { "type": "text", "text": "I did!", "overrides": {} },
                     { "type": "break", "seconds": 0.4 },
-                    { "type": "sfx", "sound": "CREAK", "overrides": {} } ] },
+                    { "type": "sfx", "sound": "CREAK", "overrides": {} },
+                    { "type": "mark", "kind": "slide", "data": { "id": "intro", "step": 1 } } ] },
     { "type": "pause", "line": 14, "seconds": 1.5 },
     { "type": "cue",   "line": 10, "sound": "RAIN", "track": "ambience", "overrides": {} },
     { "type": "track", "line": 15, "track": "music", "action": "play", "sound": "BED",

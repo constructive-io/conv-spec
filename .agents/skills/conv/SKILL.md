@@ -4,7 +4,7 @@ description: The `.conv` format — a plain-text screenplay for multi-voice audi
 compatibility: Node.js 20+ for the reference parser and the `conv` command
 metadata:
   author: constructive-io
-  version: "0.3.0"
+  version: "0.4.0"
 ---
 
 # The `.conv` format
@@ -253,6 +253,17 @@ NARRATOR: The first is when the lamp was lit.
 
 A mark goes on the line before the words it belongs with. `name:` and `title:`
 on a character are what a lower-third shows.
+
+When a build belongs to a clause in the middle of a sentence, put the mark
+inside the line, in angle brackets. It falls where the words have reached, and
+the sentence is still said in one breath:
+
+```
+NARRATOR: The first is when the lamp was lit, <slide what step:2> and the second is the weather.
+```
+
+Do not cut a sentence into two lines to cue a build; the voice starts over at
+every line.
 
 Constructive Media films it: after `media say`, `media film out/scene.flac
 out/scene.mp4 --page FOLDER` records a page of HTML whose elements carry the

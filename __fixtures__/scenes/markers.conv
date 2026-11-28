@@ -8,6 +8,8 @@ COVER: { file: video/cover.mp4 }
 [slide title]
 HOST: Next slide.
 [slide problem step:1]
+HOST: Three things matter. <slide problem step:2> The first is time <slide problem step:3>, and an <aside> stays words.
+HOST: <speakers captions> Read along.
 [video COVER start:2, for:4]
 [speakers lower-third:always captions]
 [speakers faces:still waveform]

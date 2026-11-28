@@ -424,8 +424,15 @@ function parseWith(
         opts(`\`${m[1]}[…]\``, 'line'),
         errs
       );
-      const segments: Segment[] = splitSegments(lineText).map((seg) => {
+      const segments: Segment[] = splitSegments(lineText, [...reg.directives.keys()]).map((seg) => {
         if (seg.type === 'break') return { type: 'break', seconds: seg.seconds };
+        if (seg.type === 'mark') {
+          const data = reg.directives.get(seg.kind)(seg.raw ?? '', {
+            error: (msg) => errs.push(msg),
+            suggest: (w, o) => didYouMean(w, o),
+          });
+          return { type: 'mark', kind: seg.kind, data: data || {} };
+        }
         if (seg.type === 'sfx') {
           refs.push({ line: lineno, text: s, sound: seg.sound });
           return {

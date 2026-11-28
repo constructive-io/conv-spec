@@ -4,6 +4,7 @@
  *   DAN: calm about it <break 0.5> and then it hit me.
  *   DAN: I hear you, {excited: but this changes everything!}
  *   DAN: {whisper, reverb:cathedral: come here} <sfx DOOR> {firm: we need to talk}.
+ *   DAN: Three things matter. <slide reasons step:1> The first is time.
  */
 // A span's prefix is a list of `key` / `key:value` tokens ended by ONE colon
 // before the text. It is matched token by token: `reverb:cathedral` is itself
@@ -13,16 +14,23 @@ const PREFIX = String.raw`(?:${TOKEN}\s*,\s*)*${TOKEN}`;
 const INLINE = String.raw`<break\s+([\d.]+)>|<([\d.]+)>|<sfx\s+([A-Z][A-Z0-9_-]*)(?:\s+([^>]*))?>|\{(${PREFIX}):([^{}]*)\}`;
 
 export interface RawSegment {
-  type: 'text' | 'break' | 'sfx';
+  type: 'text' | 'break' | 'sfx' | 'mark';
   text?: string;
   seconds?: number;
   sound?: string;
-  /** span override text (`whisper, reverb:hall`) or sfx play text */
+  /** the directive a mark is made by (`slide`) */
+  kind?: string;
+  /** span override text (`whisper, reverb:hall`), sfx play text, or what a mark's directive is given */
   raw?: string;
 }
 
-export function splitSegments(text: string): RawSegment[] {
-  const re = new RegExp(INLINE, 'g');
+/**
+ * `marks` are the directives that may be written inside a line (`<slide ID>`).
+ * Any other `<word …>` stays what it always was: words.
+ */
+export function splitSegments(text: string, marks: string[] = []): RawSegment[] {
+  const names = marks.map((name) => name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  const re = new RegExp(names ? String.raw`${INLINE}|<(${names})(?:\s+([^>]*))?>` : INLINE, 'g');
   const out: RawSegment[] = [];
   let pos = 0;
   let m: RegExpExecArray | null;
@@ -31,11 +39,13 @@ export function splitSegments(text: string): RawSegment[] {
     any = true;
     const before = text.slice(pos, m.index);
     if (before.trim()) out.push({ type: 'text', text: before.trim() });
-    const [, breakA, breakB, sfx, sfxArgs, spanKeys, spanText] = m;
+    const [, breakA, breakB, sfx, sfxArgs, spanKeys, spanText, mark, markArgs] = m;
     if (breakA !== undefined || breakB !== undefined) {
       out.push({ type: 'break', seconds: Number(breakA ?? breakB) });
     } else if (sfx !== undefined) {
       out.push({ type: 'sfx', sound: sfx, raw: sfxArgs ?? '' });
+    } else if (mark !== undefined) {
+      out.push({ type: 'mark', kind: mark, raw: (markArgs ?? '').trim() });
     } else if (spanText.trim()) {
       out.push({ type: 'text', text: spanText.trim(), raw: spanKeys });
     }
@@ -50,14 +60,17 @@ export function splitSegments(text: string): RawSegment[] {
 
 /**
  * A fragment of bare punctuation beside a span — the "." in `{firm: talk}.` —
- * joins the text before it rather than being spoken on its own.
+ * joins the text before it rather than being spoken on its own. A mark takes
+ * no room, so the text before a mark is the text before what follows it.
  */
 function foldPunctuation(segments: RawSegment[]): RawSegment[] {
   const out: RawSegment[] = [];
   for (const seg of segments) {
-    const prev = out[out.length - 1];
+    let at = out.length - 1;
+    while (at >= 0 && out[at].type === 'mark') at--;
+    const prev = out[at];
     if (seg.type === 'text' && !/[\p{L}\p{N}]/u.test(seg.text) && prev?.type === 'text') {
-      out[out.length - 1] = { ...prev, text: prev.text + seg.text };
+      out[at] = { ...prev, text: prev.text + seg.text };
       continue;
     }
     out.push(seg);
