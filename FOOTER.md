@@ -23,7 +23,7 @@ Write plain-text scripts for multi-voice audio with dialogue, pauses, and sound 
 
 * [Media Engine](https://github.com/constructive-io/media-engine): turn scripts into multi-voice audio with `media say`, then make videos with `media film`.
 * [Starters](https://github.com/constructive-io/media-engine-boilerplates): scaffold narrated decks, walkthroughs, animations, and documents.
-* [Plugins](https://github.com/constructive-io/media-engine-plugins): optional adapters for tools under copyleft licenses.
+* [Plugins](https://github.com/constructive-io/media-engine-plugins): optional adapters, each a package you choose to install.
 * [Libraries](https://github.com/constructive-io/media-engine-libraries): find voices, sounds, and faces, including the [CC0 foley library](https://github.com/constructive-io/media-engine-library-foley).
 * [Media Engine skills](https://github.com/constructive-io/media-engine/tree/main/.agents/skills): learn to render scripts, stage video, and work with libraries.
 

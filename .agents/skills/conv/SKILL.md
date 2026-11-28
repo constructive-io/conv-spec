@@ -312,4 +312,4 @@ parser is held to the same answers by the files in
 | `narrated-document` | the same | A document that prints as a PDF and is filmed being read |
 | `voice-library` | the same | A repository of voices, sounds and faces a renderer can add |
 | `build-a-voice` | the same | From a recording of a person to a voice a persona can speak in |
-| `media-engine-plugins` | [media-engine-plugins](https://github.com/constructive-io/media-engine-plugins) | Adapters for that engine under copyleft licenses |
+| `media-engine-plugins` | [media-engine-plugins](https://github.com/constructive-io/media-engine-plugins) | Optional adapters for that engine, each a package of its own |
